@@ -1,14 +1,18 @@
 ---
-title: 'Statistics 341:  Intro to Stat Computing and Exploratory Data Analysis with R'
+title: 'Statistics 260: R for Data Sci'
 subtitle: 'Lecture 1: Introduction to R and Getting Started'
 author: "Brad Mcneney"
-date: '2019-01-03'
 output: 
   beamer_presentation:
     includes:
       in_header: header_pagenum.tex
     toc: true
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,fig.height=4,fig.width=6)
+```
+
 # Introducing R
 
 ## What is R?
@@ -44,9 +48,7 @@ output:
 
 ## Course objectives
 
-- Understand basic R data structures and programming
-- Learn how to use base R and R package functions for data management, exploration, presentation and analysis
-- Learn how to use packages from the "tidyverse", a collection of modern tools for data science.
+- Learn how to use R for common tasks in data science, with a focus on tools from the "tidyverse".
     * <https://www.tidyverse.org/>
 
 # Getting started
@@ -54,13 +56,12 @@ output:
 ## Getting started with R, RStudio and git
 
 - A brief set of instructions are on the canvas page 
-<https://canvas.sfu.ca/courses/37593/pages/getting-started-with-r-rstudio-and-git>
+<https://canvas.sfu.ca/courses/48263/pages/getting-started-with-r-rstudio-and-git>
 - Please try to get R and RStudio installed and 
 create an RStudio project linked to the class GitHub 
 repository as soon as possible.
-- Those still having trouble after the weekend should
-attend one of the Wednesday tutorials (12:30-3:20)
-for help, even if these are not your tutorial times.
+- Those still having trouble after the weekend can ask for
+help in their Stat 261 class next week.
 
 ## R reference cards
 
@@ -86,71 +87,7 @@ commands in the script, and then submit the commands to the R console.
 - Save your script for later use.
 - More on the RStudio interface at <https://support.rstudio.com/hc/en-us/sections/200107586-Using-RStudio>
 
-# Quick-start R 
-
-## R as a calculator
-\small
-```{r}
-2+4
-5*6
-x<-6
-x*5
-```
-- The assignment operator `<-` assigns the value 6 to the variable x
-
-
-## Random number generation
-\footnotesize
-```{r}
-set.seed(123) # optional, but makes computation reproducible
-n<-100
-y<-rnorm(n,sd=1)
-hist(y)
-```
-
-## R data 
-
-\footnotesize
-```{r}
-data(cars) # load a built-in example dataset, help(cars) for info
-head(cars) # look at the first few rows
-summary(cars) # summarize the variables
-```
-
-## Plotting data
-\small
-```{r}
-plot(cars)
-```
-
-## Modelling
-\footnotesize
-```{r}
-fit <- lm(dist~speed,data=cars) # fit a linear model, help(lm)
-summary(fit)
-```
-
-## Modelling, continued
-\small
-```{r}
-plot(cars)
-abline(fit)
-```
-
-## Extracting model components 
-\footnotesize
-```{r}
-head(residuals(fit))
-vcov(fit)
-```
-- See the help page for more components
-
-## Model diagnostics
-```{r}
-par(mfrow=c(2,2))
-plot(fit)
-```
 
 ## Reading 
-- R and RStudio help pages/reference cards mentioned in this lecture
+- Chapter 1 of the text: <https://r4ds.had.co.nz/introduction.html>
 
