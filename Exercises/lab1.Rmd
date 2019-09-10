@@ -1,5 +1,5 @@
 ---
-title: "Stat 261, exercise set 1"
+title: "Stat 261, lab 1"
 author: "Brad McNeney"
 output: 
   html_document:
@@ -11,12 +11,14 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Before you start these exercises you must install the
+Before you start this lab you must install the
 `gapminder` package and the `tidyverse` collection of 
 packages. Use the `Tools -> Install Packages` menu item
 in RStudio, then type `gapminder, tidyverse` into the
 text box and click `Install`.
 
+For this lab, all you need to do is execute the code chunks.
+You will 
 
 # Exploratory analysis of gapminder data
 
