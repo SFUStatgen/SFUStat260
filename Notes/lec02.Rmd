@@ -101,6 +101,8 @@ aesthetic `shape=class` to plot different shapes for
 different kinds of cars.
 
 
+
+
 ## Components of our `ggplot`
 
 * Our plot requires a dataset, objects 
