@@ -220,13 +220,12 @@ head(gapminder)
 
 ## Subsetting the `gapminder` data
 
-* Plot life expectancy *versus* GDP per capita for
-2007. 
+* Plot life expectancy *versus* GDP per capita for 2007. 
     * Need to subset, or "filter" the data to observations from 2007.
 
 \scriptsize
 
-```{r, fig.width=3, fig.height=2}
+```{r}
 gm07 <- filter(gapminder,year==2007)
 ggplot(gm07, aes(x=gdpPercap,y=lifeExp,color=continent)) +
   geom_point()
@@ -286,10 +285,16 @@ e.g., a scatterplot smoother
 
 \scriptsize
 
-```{r, fig.width=4, fig.height=2}
+```{r}
 p2 + stat_smooth()
 ```
 
+## Exercise:
+
+* The variable `year` is quantitative, but can still be used as a grouping variable.
+Do scatterplots of `lifeExp` versus `log10GdpPercap` with points colored by `year`. 
+Add a scatterplot smoother with (i) no grouping variable and (ii) `year` as the grouping variable.
+Set the SE to FALSE for your smoothers.
 
 ## `ggplot` scales
 
@@ -306,7 +311,7 @@ p2 + stat_smooth()
 
 \scriptsize
 
-```{r, fig.width=4, fig.height=1.7}
+```{r}
 p2
 ```
 
@@ -321,7 +326,7 @@ get mapped to the graphics device.
     or a transformation.
 \scriptsize
 
-```{r, fig.width=4, fig.height=2}
+```{r}
 ggplot(gapminder,aes(x=gdpPercap,y=lifeExp,color=continent)) + 
   geom_point(alpha=0.5) + coord_trans(x="log10")
 ```
