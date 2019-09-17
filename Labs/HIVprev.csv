@@ -1,0 +1,1607 @@
+Country,year,prevalence
+Algeria,1990,0.06
+Algeria,1991,0.06
+Algeria,1992,0.06
+Algeria,1993,0.06
+Algeria,1994,0.06
+Algeria,1995,0.06
+Algeria,1996,0.06
+Algeria,1997,0.06
+Algeria,1998,0.06
+Algeria,1999,0.06
+Algeria,2000,0.06
+Angola,1990,0.5
+Angola,1991,0.8
+Angola,1992,1
+Angola,1993,1.2
+Angola,1994,1.4
+Angola,1995,1.6
+Angola,1996,1.7
+Angola,1997,1.8
+Angola,1998,1.8
+Angola,1999,1.9
+Angola,2000,1.9
+Argentina,1990,0.3
+Argentina,1991,0.3
+Argentina,1992,0.3
+Argentina,1993,0.3
+Argentina,1994,0.3
+Argentina,1995,0.3
+Argentina,1996,0.3
+Argentina,1997,0.3
+Argentina,1998,0.3
+Argentina,1999,0.3
+Argentina,2000,0.4
+Armenia,1990,0.06
+Armenia,1991,0.06
+Armenia,1992,0.06
+Armenia,1993,0.06
+Armenia,1994,0.06
+Armenia,1995,0.06
+Armenia,1996,0.06
+Armenia,1997,0.06
+Armenia,1998,0.1
+Armenia,1999,0.1
+Armenia,2000,0.1
+Australia,1990,0.1
+Australia,1991,0.1
+Australia,1992,0.1
+Australia,1993,0.1
+Australia,1994,0.1
+Australia,1995,0.1
+Australia,1996,0.1
+Australia,1997,0.1
+Australia,1998,0.1
+Australia,1999,0.1
+Australia,2000,0.1
+Austria,1990,0.06
+Austria,1991,0.06
+Austria,1992,0.06
+Austria,1993,0.06
+Austria,1994,0.06
+Austria,1995,0.06
+Austria,1996,0.06
+Austria,1997,0.1
+Austria,1998,0.1
+Austria,1999,0.1
+Austria,2000,0.1
+Azerbaijan,1990,0.06
+Azerbaijan,1991,0.06
+Azerbaijan,1992,0.06
+Azerbaijan,1993,0.06
+Azerbaijan,1994,0.06
+Azerbaijan,1995,0.06
+Azerbaijan,1996,0.06
+Azerbaijan,1997,0.06
+Azerbaijan,1998,0.06
+Azerbaijan,1999,0.06
+Azerbaijan,2000,0.06
+Bahamas,1990,3.6
+Bahamas,1991,3.8
+Bahamas,1992,3.9
+Bahamas,1993,3.9
+Bahamas,1994,3.8
+Bahamas,1995,3.7
+Bahamas,1996,3.6
+Bahamas,1997,3.5
+Bahamas,1998,3.3
+Bahamas,1999,3.2
+Bahamas,2000,3.2
+Bangladesh,1990,0.06
+Bangladesh,1991,0.06
+Bangladesh,1992,0.06
+Bangladesh,1993,0.06
+Bangladesh,1994,0.06
+Bangladesh,1995,0.06
+Bangladesh,1996,0.06
+Bangladesh,1997,0.06
+Bangladesh,1998,0.06
+Bangladesh,1999,0.06
+Bangladesh,2000,0.06
+Barbados,1990,0.06
+Barbados,1991,0.06
+Barbados,1992,0.1
+Barbados,1993,0.1
+Barbados,1994,0.1
+Barbados,1995,0.1
+Barbados,1996,0.2
+Barbados,1997,0.2
+Barbados,1998,0.3
+Barbados,1999,0.4
+Barbados,2000,0.4
+Belarus,1990,0.06
+Belarus,1991,0.06
+Belarus,1992,0.06
+Belarus,1993,0.06
+Belarus,1994,0.06
+Belarus,1995,0.06
+Belarus,1996,0.06
+Belarus,1997,0.06
+Belarus,1998,0.06
+Belarus,1999,0.1
+Belarus,2000,0.1
+Belgium,1990,0.06
+Belgium,1991,0.1
+Belgium,1992,0.1
+Belgium,1993,0.1
+Belgium,1994,0.1
+Belgium,1995,0.1
+Belgium,1996,0.2
+Belgium,1997,0.2
+Belgium,1998,0.2
+Belgium,1999,0.2
+Belgium,2000,0.2
+Belize,1990,0.5
+Belize,1991,0.7
+Belize,1992,1
+Belize,1993,1.2
+Belize,1994,1.4
+Belize,1995,1.5
+Belize,1996,1.6
+Belize,1997,1.8
+Belize,1998,1.9
+Belize,1999,2
+Belize,2000,2.2
+Benin,1990,0.2
+Benin,1991,0.4
+Benin,1992,0.5
+Benin,1993,0.7
+Benin,1994,0.9
+Benin,1995,1.1
+Benin,1996,1.3
+Benin,1997,1.4
+Benin,1998,1.4
+Benin,1999,1.4
+Benin,2000,1.4
+Bhutan,1990,0.06
+Bhutan,1991,0.06
+Bhutan,1992,0.06
+Bhutan,1993,0.06
+Bhutan,1994,0.06
+Bhutan,1995,0.06
+Bhutan,1996,0.06
+Bhutan,1997,0.06
+Bhutan,1998,0.06
+Bhutan,1999,0.06
+Bhutan,2000,0.06
+Bolivia,1990,0.1
+Bolivia,1991,0.1
+Bolivia,1992,0.2
+Bolivia,1993,0.2
+Bolivia,1994,0.2
+Bolivia,1995,0.2
+Bolivia,1996,0.2
+Bolivia,1997,0.2
+Bolivia,1998,0.2
+Bolivia,1999,0.2
+Bolivia,2000,0.2
+Botswana,1990,3.5
+Botswana,1991,5.1
+Botswana,1992,7.3
+Botswana,1993,10.1
+Botswana,1994,13.3
+Botswana,1995,16.6
+Botswana,1996,19.7
+Botswana,1997,22.2
+Botswana,1998,24.1
+Botswana,1999,25.3
+Botswana,2000,26
+Brazil,1990,0.45
+Brazil,1991,0.45
+Brazil,1992,0.45
+Brazil,1993,0.4
+Brazil,1994,0.4
+Brazil,1995,0.4
+Brazil,1996,0.4
+Brazil,1997,0.4
+Brazil,1998,0.4
+Brazil,1999,0.4
+Brazil,2000,0.4
+Bulgaria,1990,0.06
+Bulgaria,1991,0.06
+Bulgaria,1992,0.06
+Bulgaria,1993,0.06
+Bulgaria,1994,0.06
+Bulgaria,1995,0.06
+Bulgaria,1996,0.06
+Bulgaria,1997,0.06
+Bulgaria,1998,0.06
+Bulgaria,1999,0.06
+Bulgaria,2000,0.06
+Burkina Faso,1990,3.9
+Burkina Faso,1991,4
+Burkina Faso,1992,3.9
+Burkina Faso,1993,3.8
+Burkina Faso,1994,3.6
+Burkina Faso,1995,3.4
+Burkina Faso,1996,3.2
+Burkina Faso,1997,2.9
+Burkina Faso,1998,2.7
+Burkina Faso,1999,2.5
+Burkina Faso,2000,2.3
+Burundi,1990,3.9
+Burundi,1991,4.5
+Burundi,1992,5.1
+Burundi,1993,5.5
+Burundi,1994,5.8
+Burundi,1995,5.9
+Burundi,1996,5.9
+Burundi,1997,5.8
+Burundi,1998,5.7
+Burundi,1999,5.4
+Burundi,2000,5.2
+Cambodia,1990,0.5
+Cambodia,1991,0.8
+Cambodia,1992,1
+Cambodia,1993,1.2
+Cambodia,1994,1.3
+Cambodia,1995,1.4
+Cambodia,1996,1.4
+Cambodia,1997,1.4
+Cambodia,1998,1.4
+Cambodia,1999,1.4
+Cambodia,2000,1.3
+Cameroon,1990,0.6
+Cameroon,1991,1
+Cameroon,1992,1.6
+Cameroon,1993,2.5
+Cameroon,1994,3.4
+Cameroon,1995,4.2
+Cameroon,1996,4.8
+Cameroon,1997,5.1
+Cameroon,1998,5.3
+Cameroon,1999,5.4
+Cameroon,2000,5.5
+Canada,1990,0.1
+Canada,1991,0.2
+Canada,1992,0.2
+Canada,1993,0.2
+Canada,1994,0.2
+Canada,1995,0.2
+Canada,1996,0.2
+Canada,1997,0.2
+Canada,1998,0.2
+Canada,1999,0.2
+Canada,2000,0.2
+Central African Republic,1990,3.1
+Central African Republic,1991,4.6
+Central African Republic,1992,6.3
+Central African Republic,1993,7.9
+Central African Republic,1994,9
+Central African Republic,1995,9.7
+Central African Republic,1996,10.1
+Central African Republic,1997,10.1
+Central African Republic,1998,10
+Central African Republic,1999,9.8
+Central African Republic,2000,9.4
+Chad,1990,1.1
+Chad,1991,1.3
+Chad,1992,1.5
+Chad,1993,1.7
+Chad,1994,1.9
+Chad,1995,2.1
+Chad,1996,2.3
+Chad,1997,2.5
+Chad,1998,2.7
+Chad,1999,2.9
+Chad,2000,3
+Chile,1990,0.06
+Chile,1991,0.06
+Chile,1992,0.1
+Chile,1993,0.1
+Chile,1994,0.1
+Chile,1995,0.1
+Chile,1996,0.1
+Chile,1997,0.1
+Chile,1998,0.2
+Chile,1999,0.2
+Chile,2000,0.2
+Colombia,1990,0.2
+Colombia,1991,0.3
+Colombia,1992,0.4
+Colombia,1993,0.5
+Colombia,1994,0.6
+Colombia,1995,0.6
+Colombia,1996,0.7
+Colombia,1997,0.8
+Colombia,1998,0.8
+Colombia,1999,0.9
+Colombia,2000,0.9
+Comoros,1990,0.06
+Comoros,1991,0.06
+Comoros,1992,0.06
+Comoros,1993,0.06
+Comoros,1994,0.06
+Comoros,1995,0.06
+Comoros,1996,0.06
+Comoros,1997,0.06
+Comoros,1998,0.06
+Comoros,1999,0.06
+Comoros,2000,0.06
+CongoRep,1990,5.2
+CongoRep,1991,5.2
+CongoRep,1992,5
+CongoRep,1993,4.8
+CongoRep,1994,4.6
+CongoRep,1995,4.4
+CongoRep,1996,4.3
+CongoRep,1997,4.1
+CongoRep,1998,4
+CongoRep,1999,3.9
+CongoRep,2000,3.9
+Costa Rica,1990,0.06
+Costa Rica,1991,0.06
+Costa Rica,1992,0.06
+Costa Rica,1993,0.06
+Costa Rica,1994,0.06
+Costa Rica,1995,0.06
+Costa Rica,1996,0.06
+Costa Rica,1997,0.1
+Costa Rica,1998,0.1
+Costa Rica,1999,0.1
+Costa Rica,2000,0.1
+Cote d'Ivoire,1990,2.4
+Cote d'Ivoire,1991,3.3
+Cote d'Ivoire,1992,4.4
+Cote d'Ivoire,1993,5.5
+Cote d'Ivoire,1994,6.4
+Cote d'Ivoire,1995,7.1
+Cote d'Ivoire,1996,7.4
+Cote d'Ivoire,1997,7.5
+Cote d'Ivoire,1998,7.4
+Cote d'Ivoire,1999,7.2
+Cote d'Ivoire,2000,6.9
+Croatia,1990,0.06
+Croatia,1991,0.06
+Croatia,1992,0.06
+Croatia,1993,0.06
+Croatia,1994,0.06
+Croatia,1995,0.06
+Croatia,1996,0.06
+Croatia,1997,0.06
+Croatia,1998,0.06
+Croatia,1999,0.06
+Croatia,2000,0.06
+Cuba,1990,0.06
+Cuba,1991,0.06
+Cuba,1992,0.06
+Cuba,1993,0.06
+Cuba,1994,0.06
+Cuba,1995,0.06
+Cuba,1996,0.06
+Cuba,1997,0.06
+Cuba,1998,0.06
+Cuba,1999,0.06
+Cuba,2000,0.06
+Czech Republic,1990,0.06
+Czech Republic,1991,0.06
+Czech Republic,1992,0.06
+Czech Republic,1993,0.06
+Czech Republic,1994,0.06
+Czech Republic,1995,0.06
+Czech Republic,1996,0.06
+Czech Republic,1997,0.06
+Czech Republic,1998,0.06
+Czech Republic,1999,0.06
+Czech Republic,2000,0.06
+Denmark,1990,0.06
+Denmark,1991,0.06
+Denmark,1992,0.06
+Denmark,1993,0.1
+Denmark,1994,0.1
+Denmark,1995,0.1
+Denmark,1996,0.1
+Denmark,1997,0.1
+Denmark,1998,0.1
+Denmark,1999,0.1
+Denmark,2000,0.1
+Djibouti,1990,0.9
+Djibouti,1991,1.1
+Djibouti,1992,1.4
+Djibouti,1993,1.7
+Djibouti,1994,2
+Djibouti,1995,2.3
+Djibouti,1996,2.5
+Djibouti,1997,2.7
+Djibouti,1998,2.8
+Djibouti,1999,2.9
+Djibouti,2000,2.9
+Dominican Republic,1990,0.4
+Dominican Republic,1991,0.5
+Dominican Republic,1992,0.6
+Dominican Republic,1993,0.7
+Dominican Republic,1994,0.8
+Dominican Republic,1995,0.9
+Dominican Republic,1996,0.9
+Dominican Republic,1997,1
+Dominican Republic,1998,1
+Dominican Republic,1999,1
+Dominican Republic,2000,1
+Ecuador,1990,0.3
+Ecuador,1991,0.4
+Ecuador,1992,0.4
+Ecuador,1993,0.5
+Ecuador,1994,0.5
+Ecuador,1995,0.5
+Ecuador,1996,0.5
+Ecuador,1997,0.5
+Ecuador,1998,0.5
+Ecuador,1999,0.5
+Ecuador,2000,0.5
+Egypt,1990,0.06
+Egypt,1991,0.06
+Egypt,1992,0.06
+Egypt,1993,0.06
+Egypt,1994,0.06
+Egypt,1995,0.06
+Egypt,1996,0.06
+Egypt,1997,0.06
+Egypt,1998,0.06
+Egypt,1999,0.06
+Egypt,2000,0.06
+El Salvador,1990,0.1
+El Salvador,1991,0.2
+El Salvador,1992,0.2
+El Salvador,1993,0.2
+El Salvador,1994,0.3
+El Salvador,1995,0.4
+El Salvador,1996,0.4
+El Salvador,1997,0.5
+El Salvador,1998,0.6
+El Salvador,1999,0.7
+El Salvador,2000,0.7
+Equatorial Guinea,1990,0.1
+Equatorial Guinea,1991,0.2
+Equatorial Guinea,1992,0.2
+Equatorial Guinea,1993,0.3
+Equatorial Guinea,1994,0.3
+Equatorial Guinea,1995,0.4
+Equatorial Guinea,1996,0.6
+Equatorial Guinea,1997,0.7
+Equatorial Guinea,1998,0.9
+Equatorial Guinea,1999,1.2
+Equatorial Guinea,2000,1.5
+Eritrea,1990,0.3
+Eritrea,1991,0.4
+Eritrea,1992,0.6
+Eritrea,1993,0.8
+Eritrea,1994,0.9
+Eritrea,1995,1.1
+Eritrea,1996,1.1
+Eritrea,1997,1.2
+Eritrea,1998,1.2
+Eritrea,1999,1.2
+Eritrea,2000,1.2
+Estonia,1990,0.06
+Estonia,1991,0.06
+Estonia,1992,0.06
+Estonia,1993,0.06
+Estonia,1994,0.1
+Estonia,1995,0.1
+Estonia,1996,0.1
+Estonia,1997,0.2
+Estonia,1998,0.3
+Estonia,1999,0.4
+Estonia,2000,0.5
+Fiji,1990,0.06
+Fiji,1991,0.06
+Fiji,1992,0.06
+Fiji,1993,0.06
+Fiji,1994,0.06
+Fiji,1995,0.06
+Fiji,1996,0.06
+Fiji,1997,0.06
+Fiji,1998,0.06
+Fiji,1999,0.06
+Fiji,2000,0.06
+Finland,1990,0.06
+Finland,1991,0.06
+Finland,1992,0.06
+Finland,1993,0.06
+Finland,1994,0.06
+Finland,1995,0.06
+Finland,1996,0.06
+Finland,1997,0.06
+Finland,1998,0.06
+Finland,1999,0.06
+Finland,2000,0.1
+France,1990,0.3
+France,1991,0.3
+France,1992,0.3
+France,1993,0.3
+France,1994,0.3
+France,1995,0.3
+France,1996,0.3
+France,1997,0.3
+France,1998,0.3
+France,1999,0.3
+France,2000,0.3
+Gabon,1990,0.9
+Gabon,1991,1.2
+Gabon,1992,1.6
+Gabon,1993,2
+Gabon,1994,2.6
+Gabon,1995,3.1
+Gabon,1996,3.7
+Gabon,1997,4.2
+Gabon,1998,4.6
+Gabon,1999,4.9
+Gabon,2000,5.2
+Gambia,1990,0.1
+Gambia,1991,0.1
+Gambia,1992,0.1
+Gambia,1993,0.2
+Gambia,1994,0.2
+Gambia,1995,0.2
+Gambia,1996,0.3
+Gambia,1997,0.3
+Gambia,1998,0.4
+Gambia,1999,0.4
+Gambia,2000,0.5
+Georgia,1990,0.06
+Georgia,1991,0.06
+Georgia,1992,0.06
+Georgia,1993,0.06
+Georgia,1994,0.06
+Georgia,1995,0.06
+Georgia,1996,0.06
+Georgia,1997,0.06
+Georgia,1998,0.06
+Georgia,1999,0.06
+Georgia,2000,0.06
+Germany,1990,0.1
+Germany,1991,0.1
+Germany,1992,0.1
+Germany,1993,0.1
+Germany,1994,0.1
+Germany,1995,0.1
+Germany,1996,0.1
+Germany,1997,0.1
+Germany,1998,0.1
+Germany,1999,0.1
+Germany,2000,0.1
+Ghana,1990,0.3
+Ghana,1991,0.4
+Ghana,1992,0.7
+Ghana,1993,0.9
+Ghana,1994,1.3
+Ghana,1995,1.7
+Ghana,1996,2
+Ghana,1997,2.2
+Ghana,1998,2.3
+Ghana,1999,2.3
+Ghana,2000,2.3
+Greece,1990,0.1
+Greece,1991,0.1
+Greece,1992,0.1
+Greece,1993,0.1
+Greece,1994,0.1
+Greece,1995,0.1
+Greece,1996,0.1
+Greece,1997,0.1
+Greece,1998,0.1
+Greece,1999,0.1
+Greece,2000,0.1
+Guatemala,1990,0.1
+Guatemala,1991,0.1
+Guatemala,1992,0.1
+Guatemala,1993,0.2
+Guatemala,1994,0.2
+Guatemala,1995,0.2
+Guatemala,1996,0.3
+Guatemala,1997,0.3
+Guatemala,1998,0.4
+Guatemala,1999,0.4
+Guatemala,2000,0.5
+Guinea,1990,1.1
+Guinea,1991,1.3
+Guinea,1992,1.5
+Guinea,1993,1.7
+Guinea,1994,1.8
+Guinea,1995,1.8
+Guinea,1996,1.8
+Guinea,1997,1.8
+Guinea,1998,1.8
+Guinea,1999,1.8
+Guinea,2000,1.7
+Guinea-Bissau,1990,0.3
+Guinea-Bissau,1991,0.3
+Guinea-Bissau,1992,0.4
+Guinea-Bissau,1993,0.6
+Guinea-Bissau,1994,0.7
+Guinea-Bissau,1995,0.9
+Guinea-Bissau,1996,1
+Guinea-Bissau,1997,1.2
+Guinea-Bissau,1998,1.4
+Guinea-Bissau,1999,1.6
+Guinea-Bissau,2000,1.8
+Guyana,1990,2.8
+Guyana,1991,2.7
+Guyana,1992,2.6
+Guyana,1993,2.5
+Guyana,1994,2.3
+Guyana,1995,2.2
+Guyana,1996,2.1
+Guyana,1997,1.9
+Guyana,1998,1.8
+Guyana,1999,1.6
+Guyana,2000,1.5
+Haiti,1990,1.3
+Haiti,1991,1.6
+Haiti,1992,2.3
+Haiti,1993,3.3
+Haiti,1994,3.6
+Haiti,1995,3.6
+Haiti,1996,3.4
+Haiti,1997,3.3
+Haiti,1998,3.1
+Haiti,1999,2.9
+Haiti,2000,2.8
+Honduras,1990,1.1
+Honduras,1991,1.2
+Honduras,1992,1.4
+Honduras,1993,1.4
+Honduras,1994,1.5
+Honduras,1995,1.5
+Honduras,1996,1.5
+Honduras,1997,1.4
+Honduras,1998,1.4
+Honduras,1999,1.3
+Honduras,2000,1.3
+Hungary,1990,0.1
+Hungary,1991,0.1
+Hungary,1992,0.1
+Hungary,1993,0.1
+Hungary,1994,0.1
+Hungary,1995,0.1
+Hungary,1996,0.1
+Hungary,1997,0.1
+Hungary,1998,0.06
+Hungary,1999,0.06
+Hungary,2000,0.06
+Iceland,1990,0.06
+Iceland,1991,0.06
+Iceland,1992,0.1
+Iceland,1993,0.1
+Iceland,1994,0.1
+Iceland,1995,0.1
+Iceland,1996,0.1
+Iceland,1997,0.1
+Iceland,1998,0.2
+Iceland,1999,0.2
+Iceland,2000,0.2
+India,1990,0.1
+India,1991,0.1
+India,1992,0.1
+India,1993,0.2
+India,1994,0.2
+India,1995,0.3
+India,1996,0.3
+India,1997,0.3
+India,1998,0.4
+India,1999,0.4
+India,2000,0.4
+Indonesia,1990,0.06
+Indonesia,1991,0.06
+Indonesia,1992,0.06
+Indonesia,1993,0.06
+Indonesia,1994,0.06
+Indonesia,1995,0.06
+Indonesia,1996,0.06
+Indonesia,1997,0.06
+Indonesia,1998,0.06
+Indonesia,1999,0.06
+Indonesia,2000,0.06
+Iran,1990,0.06
+Iran,1991,0.06
+Iran,1992,0.06
+Iran,1993,0.06
+Iran,1994,0.06
+Iran,1995,0.06
+Iran,1996,0.06
+Iran,1997,0.1
+Iran,1998,0.1
+Iran,1999,0.1
+Iran,2000,0.1
+Ireland,1990,0.06
+Ireland,1991,0.06
+Ireland,1992,0.1
+Ireland,1993,0.1
+Ireland,1994,0.1
+Ireland,1995,0.1
+Ireland,1996,0.1
+Ireland,1997,0.1
+Ireland,1998,0.2
+Ireland,1999,0.2
+Ireland,2000,0.2
+Israel,1990,0.06
+Israel,1991,0.1
+Israel,1992,0.1
+Israel,1993,0.1
+Israel,1994,0.1
+Israel,1995,0.1
+Israel,1996,0.1
+Israel,1997,0.1
+Israel,1998,0.1
+Israel,1999,0.1
+Israel,2000,0.1
+Italy,1990,0.3
+Italy,1991,0.3
+Italy,1992,0.3
+Italy,1993,0.3
+Italy,1994,0.3
+Italy,1995,0.3
+Italy,1996,0.3
+Italy,1997,0.3
+Italy,1998,0.3
+Italy,1999,0.3
+Italy,2000,0.3
+Jamaica,1990,2.1
+Jamaica,1991,2.2
+Jamaica,1992,2.2
+Jamaica,1993,2.2
+Jamaica,1994,2.2
+Jamaica,1995,2.2
+Jamaica,1996,2.1
+Jamaica,1997,2.1
+Jamaica,1998,2
+Jamaica,1999,2
+Jamaica,2000,1.9
+Japan,1990,0.06
+Japan,1991,0.06
+Japan,1992,0.06
+Japan,1993,0.06
+Japan,1994,0.06
+Japan,1995,0.06
+Japan,1996,0.06
+Japan,1997,0.06
+Japan,1998,0.06
+Japan,1999,0.06
+Japan,2000,0.06
+Kazakhstan,1990,0.06
+Kazakhstan,1991,0.06
+Kazakhstan,1992,0.06
+Kazakhstan,1993,0.06
+Kazakhstan,1994,0.06
+Kazakhstan,1995,0.06
+Kazakhstan,1996,0.06
+Kazakhstan,1997,0.06
+Kazakhstan,1998,0.06
+Kazakhstan,1999,0.06
+Kazakhstan,2000,0.06
+Kenya,1990,3.9
+Kenya,1991,5.4
+Kenya,1992,7
+Kenya,1993,8.4
+Kenya,1994,9.6
+Kenya,1995,10.3
+Kenya,1996,10.5
+Kenya,1997,10.5
+Kenya,1998,10.1
+Kenya,1999,9.6
+Kenya,2000,9
+Kyrgyz Republic,1990,0.06
+Kyrgyz Republic,1991,0.06
+Kyrgyz Republic,1992,0.06
+Kyrgyz Republic,1993,0.06
+Kyrgyz Republic,1994,0.06
+Kyrgyz Republic,1995,0.06
+Kyrgyz Republic,1996,0.06
+Kyrgyz Republic,1997,0.06
+Kyrgyz Republic,1998,0.06
+Kyrgyz Republic,1999,0.06
+Kyrgyz Republic,2000,0.06
+Lao,1990,0.06
+Lao,1991,0.06
+Lao,1992,0.06
+Lao,1993,0.06
+Lao,1994,0.06
+Lao,1995,0.06
+Lao,1996,0.06
+Lao,1997,0.06
+Lao,1998,0.06
+Lao,1999,0.06
+Lao,2000,0.06
+Latvia,1990,0.06
+Latvia,1991,0.06
+Latvia,1992,0.06
+Latvia,1993,0.1
+Latvia,1994,0.1
+Latvia,1995,0.1
+Latvia,1996,0.1
+Latvia,1997,0.2
+Latvia,1998,0.2
+Latvia,1999,0.2
+Latvia,2000,0.3
+Lebanon,1990,0.06
+Lebanon,1991,0.06
+Lebanon,1992,0.06
+Lebanon,1993,0.1
+Lebanon,1994,0.1
+Lebanon,1995,0.1
+Lebanon,1996,0.1
+Lebanon,1997,0.1
+Lebanon,1998,0.1
+Lebanon,1999,0.1
+Lebanon,2000,0.2
+Lesotho,1990,0.8
+Lesotho,1991,1.7
+Lesotho,1992,3.3
+Lesotho,1993,5.9
+Lesotho,1994,9.8
+Lesotho,1995,14.3
+Lesotho,1996,18.5
+Lesotho,1997,21.6
+Lesotho,1998,23.4
+Lesotho,1999,24.2
+Lesotho,2000,24.5
+Liberia,1990,0.3
+Liberia,1991,0.5
+Liberia,1992,1
+Liberia,1993,1.7
+Liberia,1994,2.5
+Liberia,1995,3.1
+Liberia,1996,3.4
+Liberia,1997,3.6
+Liberia,1998,3.5
+Liberia,1999,3.4
+Liberia,2000,3.3
+Lithuania,1990,0.06
+Lithuania,1991,0.06
+Lithuania,1992,0.06
+Lithuania,1993,0.06
+Lithuania,1994,0.06
+Lithuania,1995,0.06
+Lithuania,1996,0.06
+Lithuania,1997,0.06
+Lithuania,1998,0.06
+Lithuania,1999,0.06
+Lithuania,2000,0.06
+Luxembourg,1990,0.1
+Luxembourg,1991,0.1
+Luxembourg,1992,0.1
+Luxembourg,1993,0.1
+Luxembourg,1994,0.1
+Luxembourg,1995,0.2
+Luxembourg,1996,0.2
+Luxembourg,1997,0.2
+Luxembourg,1998,0.2
+Luxembourg,1999,0.2
+Luxembourg,2000,0.2
+Madagascar,1990,0.2
+Madagascar,1991,0.2
+Madagascar,1992,0.2
+Madagascar,1993,0.2
+Madagascar,1994,0.2
+Madagascar,1995,0.2
+Madagascar,1996,0.2
+Madagascar,1997,0.2
+Madagascar,1998,0.2
+Madagascar,1999,0.2
+Madagascar,2000,0.2
+Malawi,1990,7.2
+Malawi,1991,8.8
+Malawi,1992,10.5
+Malawi,1993,11.9
+Malawi,1994,13.1
+Malawi,1995,13.9
+Malawi,1996,14.5
+Malawi,1997,14.7
+Malawi,1998,14.7
+Malawi,1999,14.5
+Malawi,2000,14.2
+Malaysia,1990,0.1
+Malaysia,1991,0.1
+Malaysia,1992,0.1
+Malaysia,1993,0.2
+Malaysia,1994,0.3
+Malaysia,1995,0.3
+Malaysia,1996,0.3
+Malaysia,1997,0.4
+Malaysia,1998,0.4
+Malaysia,1999,0.4
+Malaysia,2000,0.4
+Maldives,1990,0.06
+Maldives,1991,0.06
+Maldives,1992,0.06
+Maldives,1993,0.06
+Maldives,1994,0.06
+Maldives,1995,0.06
+Maldives,1996,0.06
+Maldives,1997,0.06
+Maldives,1998,0.06
+Maldives,1999,0.06
+Maldives,2000,0.06
+Mali,1990,0.4
+Mali,1991,0.6
+Mali,1992,1
+Mali,1993,1.4
+Mali,1994,1.7
+Mali,1995,1.8
+Mali,1996,1.9
+Mali,1997,1.9
+Mali,1998,1.8
+Mali,1999,1.8
+Mali,2000,1.7
+Malta,1990,0.06
+Malta,1991,0.06
+Malta,1992,0.06
+Malta,1993,0.06
+Malta,1994,0.1
+Malta,1995,0.1
+Malta,1996,0.1
+Malta,1997,0.1
+Malta,1998,0.1
+Malta,1999,0.1
+Malta,2000,0.1
+Mauritania,1990,0.2
+Mauritania,1991,0.2
+Mauritania,1992,0.2
+Mauritania,1993,0.3
+Mauritania,1994,0.3
+Mauritania,1995,0.4
+Mauritania,1996,0.4
+Mauritania,1997,0.5
+Mauritania,1998,0.5
+Mauritania,1999,0.5
+Mauritania,2000,0.6
+Mauritius,1990,0.06
+Mauritius,1991,0.1
+Mauritius,1992,0.1
+Mauritius,1993,0.1
+Mauritius,1994,0.1
+Mauritius,1995,0.1
+Mauritius,1996,0.1
+Mauritius,1997,0.2
+Mauritius,1998,0.2
+Mauritius,1999,0.3
+Mauritius,2000,0.3
+Mexico,1990,0.4
+Mexico,1991,0.4
+Mexico,1992,0.4
+Mexico,1993,0.4
+Mexico,1994,0.3
+Mexico,1995,0.3
+Mexico,1996,0.3
+Mexico,1997,0.3
+Mexico,1998,0.3
+Mexico,1999,0.3
+Mexico,2000,0.3
+Moldova,1990,0.06
+Moldova,1991,0.1
+Moldova,1992,0.1
+Moldova,1993,0.1
+Moldova,1994,0.1
+Moldova,1995,0.1
+Moldova,1996,0.2
+Moldova,1997,0.3
+Moldova,1998,0.3
+Moldova,1999,0.4
+Moldova,2000,0.4
+Mongolia,1990,0.06
+Mongolia,1991,0.06
+Mongolia,1992,0.06
+Mongolia,1993,0.06
+Mongolia,1994,0.06
+Mongolia,1995,0.06
+Mongolia,1996,0.06
+Mongolia,1997,0.06
+Mongolia,1998,0.06
+Mongolia,1999,0.06
+Mongolia,2000,0.06
+Morocco,1990,0.06
+Morocco,1991,0.06
+Morocco,1992,0.06
+Morocco,1993,0.06
+Morocco,1994,0.06
+Morocco,1995,0.06
+Morocco,1996,0.1
+Morocco,1997,0.1
+Morocco,1998,0.1
+Morocco,1999,0.1
+Morocco,2000,0.1
+Mozambique,1990,1.2
+Mozambique,1991,1.6
+Mozambique,1992,2.1
+Mozambique,1993,2.7
+Mozambique,1994,3.4
+Mozambique,1995,4.1
+Mozambique,1996,4.9
+Mozambique,1997,5.8
+Mozambique,1998,6.7
+Mozambique,1999,7.7
+Mozambique,2000,8.6
+Myanmar,1990,0.2
+Myanmar,1991,0.3
+Myanmar,1992,0.4
+Myanmar,1993,0.4
+Myanmar,1994,0.5
+Myanmar,1995,0.6
+Myanmar,1996,0.6
+Myanmar,1997,0.7
+Myanmar,1998,0.7
+Myanmar,1999,0.7
+Myanmar,2000,0.8
+Namibia,1990,1.6
+Namibia,1991,2.2
+Namibia,1992,3
+Namibia,1993,4.1
+Namibia,1994,5.5
+Namibia,1995,7.1
+Namibia,1996,8.9
+Namibia,1997,10.7
+Namibia,1998,12.5
+Namibia,1999,14.1
+Namibia,2000,15.3
+Nepal,1990,0.2
+Nepal,1991,0.3
+Nepal,1992,0.3
+Nepal,1993,0.3
+Nepal,1994,0.4
+Nepal,1995,0.4
+Nepal,1996,0.4
+Nepal,1997,0.4
+Nepal,1998,0.5
+Nepal,1999,0.5
+Nepal,2000,0.5
+Netherlands,1990,0.1
+Netherlands,1991,0.1
+Netherlands,1992,0.1
+Netherlands,1993,0.1
+Netherlands,1994,0.1
+Netherlands,1995,0.2
+Netherlands,1996,0.2
+Netherlands,1997,0.2
+Netherlands,1998,0.2
+Netherlands,1999,0.2
+Netherlands,2000,0.2
+New Zealand,1990,0.1
+New Zealand,1991,0.1
+New Zealand,1992,0.1
+New Zealand,1993,0.06
+New Zealand,1994,0.06
+New Zealand,1995,0.06
+New Zealand,1996,0.1
+New Zealand,1997,0.1
+New Zealand,1998,0.1
+New Zealand,1999,0.1
+New Zealand,2000,0.1
+Nicaragua,1990,0.06
+Nicaragua,1991,0.06
+Nicaragua,1992,0.06
+Nicaragua,1993,0.1
+Nicaragua,1994,0.1
+Nicaragua,1995,0.1
+Nicaragua,1996,0.1
+Nicaragua,1997,0.1
+Nicaragua,1998,0.1
+Nicaragua,1999,0.1
+Nicaragua,2000,0.1
+Niger,1990,0.1
+Niger,1991,0.1
+Niger,1992,0.2
+Niger,1993,0.3
+Niger,1994,0.4
+Niger,1995,0.6
+Niger,1996,0.7
+Niger,1997,0.9
+Niger,1998,0.9
+Niger,1999,1
+Niger,2000,1
+Nigeria,1990,1.3
+Nigeria,1991,2.2
+Nigeria,1992,3.1
+Nigeria,1993,3.6
+Nigeria,1994,3.8
+Nigeria,1995,4
+Nigeria,1996,4
+Nigeria,1997,4
+Nigeria,1998,4
+Nigeria,1999,4
+Nigeria,2000,3.9
+Norway,1990,0.06
+Norway,1991,0.06
+Norway,1992,0.1
+Norway,1993,0.1
+Norway,1994,0.1
+Norway,1995,0.1
+Norway,1996,0.1
+Norway,1997,0.1
+Norway,1998,0.1
+Norway,1999,0.1
+Norway,2000,0.1
+Oman,1990,0.06
+Oman,1991,0.06
+Oman,1992,0.06
+Oman,1993,0.06
+Oman,1994,0.06
+Oman,1995,0.06
+Oman,1996,0.06
+Oman,1997,0.06
+Oman,1998,0.06
+Oman,1999,0.06
+Oman,2000,0.06
+Pakistan,1990,0.06
+Pakistan,1991,0.06
+Pakistan,1992,0.06
+Pakistan,1993,0.06
+Pakistan,1994,0.06
+Pakistan,1995,0.06
+Pakistan,1996,0.06
+Pakistan,1997,0.06
+Pakistan,1998,0.06
+Pakistan,1999,0.06
+Pakistan,2000,0.06
+Panama,1990,0.2
+Panama,1991,0.3
+Panama,1992,0.3
+Panama,1993,0.4
+Panama,1994,1.1
+Panama,1995,1.6
+Panama,1996,1.6
+Panama,1997,1.6
+Panama,1998,1.6
+Panama,1999,1.5
+Panama,2000,1.4
+Papua New Guinea,1990,0.06
+Papua New Guinea,1991,0.06
+Papua New Guinea,1992,0.06
+Papua New Guinea,1993,0.1
+Papua New Guinea,1994,0.1
+Papua New Guinea,1995,0.1
+Papua New Guinea,1996,0.1
+Papua New Guinea,1997,0.2
+Papua New Guinea,1998,0.2
+Papua New Guinea,1999,0.3
+Papua New Guinea,2000,0.4
+Paraguay,1990,0.06
+Paraguay,1991,0.1
+Paraguay,1992,0.2
+Paraguay,1993,0.2
+Paraguay,1994,0.2
+Paraguay,1995,0.2
+Paraguay,1996,0.2
+Paraguay,1997,0.2
+Paraguay,1998,0.3
+Paraguay,1999,0.3
+Paraguay,2000,0.3
+Peru,1990,0.4
+Peru,1991,0.4
+Peru,1992,0.5
+Peru,1993,0.5
+Peru,1994,0.5
+Peru,1995,0.5
+Peru,1996,0.5
+Peru,1997,0.5
+Peru,1998,0.5
+Peru,1999,0.5
+Peru,2000,0.5
+Philippines,1990,0.06
+Philippines,1991,0.06
+Philippines,1992,0.06
+Philippines,1993,0.06
+Philippines,1994,0.06
+Philippines,1995,0.06
+Philippines,1996,0.06
+Philippines,1997,0.06
+Philippines,1998,0.06
+Philippines,1999,0.06
+Philippines,2000,0.06
+Poland,1990,0.06
+Poland,1991,0.06
+Poland,1992,0.06
+Poland,1993,0.1
+Poland,1994,0.1
+Poland,1995,0.1
+Poland,1996,0.1
+Poland,1997,0.1
+Poland,1998,0.1
+Poland,1999,0.1
+Poland,2000,0.1
+Portugal,1990,0.1
+Portugal,1991,0.1
+Portugal,1992,0.2
+Portugal,1993,0.2
+Portugal,1994,0.3
+Portugal,1995,0.3
+Portugal,1996,0.3
+Portugal,1997,0.4
+Portugal,1998,0.4
+Portugal,1999,0.4
+Portugal,2000,0.4
+Qatar,1990,0.06
+Qatar,1991,0.06
+Qatar,1992,0.06
+Qatar,1993,0.06
+Qatar,1994,0.06
+Qatar,1995,0.06
+Qatar,1996,0.06
+Qatar,1997,0.06
+Qatar,1998,0.06
+Qatar,1999,0.06
+Qatar,2000,0.06
+Romania,1990,0.06
+Romania,1991,0.06
+Romania,1992,0.06
+Romania,1993,0.1
+Romania,1994,0.1
+Romania,1995,0.1
+Romania,1996,0.1
+Romania,1997,0.1
+Romania,1998,0.1
+Romania,1999,0.1
+Romania,2000,0.1
+Russia,1990,0.06
+Russia,1991,0.06
+Russia,1992,0.06
+Russia,1993,0.06
+Russia,1994,0.06
+Russia,1995,0.06
+Russia,1996,0.06
+Russia,1997,0.06
+Russia,1998,0.1
+Russia,1999,0.1
+Russia,2000,0.3
+Rwanda,1990,5.2
+Rwanda,1991,5.2
+Rwanda,1992,5.1
+Rwanda,1993,5
+Rwanda,1994,4.9
+Rwanda,1995,4.7
+Rwanda,1996,4.5
+Rwanda,1997,4.3
+Rwanda,1998,4.2
+Rwanda,1999,4
+Rwanda,2000,3.8
+Senegal,1990,0.2
+Senegal,1991,0.2
+Senegal,1992,0.2
+Senegal,1993,0.3
+Senegal,1994,0.3
+Senegal,1995,0.4
+Senegal,1996,0.4
+Senegal,1997,0.5
+Senegal,1998,0.5
+Senegal,1999,0.5
+Senegal,2000,0.6
+Serbia,1990,0.1
+Serbia,1991,0.1
+Serbia,1992,0.1
+Serbia,1993,0.1
+Serbia,1994,0.1
+Serbia,1995,0.1
+Serbia,1996,0.06
+Serbia,1997,0.06
+Serbia,1998,0.06
+Serbia,1999,0.06
+Serbia,2000,0.06
+Sierra Leone,1990,0.06
+Sierra Leone,1991,0.06
+Sierra Leone,1992,0.1
+Sierra Leone,1993,0.1
+Sierra Leone,1994,0.1
+Sierra Leone,1995,0.2
+Sierra Leone,1996,0.3
+Sierra Leone,1997,0.4
+Sierra Leone,1998,0.6
+Sierra Leone,1999,0.8
+Sierra Leone,2000,0.9
+Singapore,1990,0.06
+Singapore,1991,0.06
+Singapore,1992,0.1
+Singapore,1993,0.1
+Singapore,1994,0.1
+Singapore,1995,0.1
+Singapore,1996,0.1
+Singapore,1997,0.1
+Singapore,1998,0.1
+Singapore,1999,0.1
+Singapore,2000,0.1
+Slovak Republic,1990,0.06
+Slovak Republic,1991,0.06
+Slovak Republic,1992,0.06
+Slovak Republic,1993,0.06
+Slovak Republic,1994,0.06
+Slovak Republic,1995,0.06
+Slovak Republic,1996,0.06
+Slovak Republic,1997,0.06
+Slovak Republic,1998,0.06
+Slovak Republic,1999,0.06
+Slovak Republic,2000,0.06
+Slovenia,1990,0.06
+Slovenia,1991,0.06
+Slovenia,1992,0.06
+Slovenia,1993,0.06
+Slovenia,1994,0.06
+Slovenia,1995,0.06
+Slovenia,1996,0.06
+Slovenia,1997,0.06
+Slovenia,1998,0.06
+Slovenia,1999,0.06
+Slovenia,2000,0.06
+Somalia,1990,0.1
+Somalia,1991,0.1
+Somalia,1992,0.1
+Somalia,1993,0.1
+Somalia,1994,0.1
+Somalia,1995,0.1
+Somalia,1996,0.1
+Somalia,1997,0.2
+Somalia,1998,0.2
+Somalia,1999,0.2
+Somalia,2000,0.2
+South Africa,1990,0.7
+South Africa,1991,1.2
+South Africa,1992,1.8
+South Africa,1993,2.9
+South Africa,1994,4.3
+South Africa,1995,6.1
+South Africa,1996,8.4
+South Africa,1997,10.7
+South Africa,1998,12.9
+South Africa,1999,14.8
+South Africa,2000,16.1
+South Korea,1990,0.06
+South Korea,1991,0.06
+South Korea,1992,0.06
+South Korea,1993,0.06
+South Korea,1994,0.06
+South Korea,1995,0.06
+South Korea,1996,0.06
+South Korea,1997,0.06
+South Korea,1998,0.06
+South Korea,1999,0.06
+South Korea,2000,0.06
+Spain,1990,0.4
+Spain,1991,0.4
+Spain,1992,0.4
+Spain,1993,0.5
+Spain,1994,0.5
+Spain,1995,0.5
+Spain,1996,0.4
+Spain,1997,0.4
+Spain,1998,0.4
+Spain,1999,0.4
+Spain,2000,0.4
+Sri Lanka,1990,0.06
+Sri Lanka,1991,0.06
+Sri Lanka,1992,0.06
+Sri Lanka,1993,0.06
+Sri Lanka,1994,0.06
+Sri Lanka,1995,0.06
+Sri Lanka,1996,0.06
+Sri Lanka,1997,0.06
+Sri Lanka,1998,0.06
+Sri Lanka,1999,0.06
+Sri Lanka,2000,0.06
+Sudan,1990,0.1
+Sudan,1991,0.1
+Sudan,1992,0.1
+Sudan,1993,0.1
+Sudan,1994,0.1
+Sudan,1995,0.2
+Sudan,1996,0.2
+Sudan,1997,0.2
+Sudan,1998,0.3
+Sudan,1999,0.3
+Sudan,2000,0.3
+Suriname,1990,0.1
+Suriname,1991,0.2
+Suriname,1992,0.2
+Suriname,1993,0.4
+Suriname,1994,0.6
+Suriname,1995,0.7
+Suriname,1996,0.9
+Suriname,1997,0.9
+Suriname,1998,1
+Suriname,1999,1
+Suriname,2000,1
+Swaziland,1990,2.3
+Swaziland,1991,3.2
+Swaziland,1992,4.4
+Swaziland,1993,6.1
+Swaziland,1994,8.1
+Swaziland,1995,10.6
+Swaziland,1996,13.3
+Swaziland,1997,16
+Swaziland,1998,18.5
+Swaziland,1999,20.6
+Swaziland,2000,22.3
+Sweden,1990,0.1
+Sweden,1991,0.1
+Sweden,1992,0.1
+Sweden,1993,0.1
+Sweden,1994,0.1
+Sweden,1995,0.1
+Sweden,1996,0.1
+Sweden,1997,0.1
+Sweden,1998,0.1
+Sweden,1999,0.1
+Sweden,2000,0.1
+Switzerland,1990,0.2
+Switzerland,1991,0.2
+Switzerland,1992,0.3
+Switzerland,1993,0.3
+Switzerland,1994,0.3
+Switzerland,1995,0.3
+Switzerland,1996,0.3
+Switzerland,1997,0.3
+Switzerland,1998,0.3
+Switzerland,1999,0.3
+Switzerland,2000,0.3
+Tajikistan,1990,0.06
+Tajikistan,1991,0.06
+Tajikistan,1992,0.06
+Tajikistan,1993,0.06
+Tajikistan,1994,0.06
+Tajikistan,1995,0.1
+Tajikistan,1996,0.1
+Tajikistan,1997,0.1
+Tajikistan,1998,0.1
+Tajikistan,1999,0.1
+Tajikistan,2000,0.1
+Tanzania,1990,4.8
+Tanzania,1991,5.7
+Tanzania,1992,6.5
+Tanzania,1993,7.1
+Tanzania,1994,7.6
+Tanzania,1995,7.8
+Tanzania,1996,7.9
+Tanzania,1997,7.9
+Tanzania,1998,7.7
+Tanzania,1999,7.5
+Tanzania,2000,7.3
+Thailand,1990,1
+Thailand,1991,1.5
+Thailand,1992,1.8
+Thailand,1993,2
+Thailand,1994,2.1
+Thailand,1995,2.1
+Thailand,1996,2.1
+Thailand,1997,2
+Thailand,1998,2
+Thailand,1999,1.9
+Thailand,2000,1.8
+Togo,1990,0.6
+Togo,1991,0.8
+Togo,1992,1.2
+Togo,1993,1.6
+Togo,1994,2
+Togo,1995,2.5
+Togo,1996,2.9
+Togo,1997,3.1
+Togo,1998,3.4
+Togo,1999,3.5
+Togo,2000,3.6
+Trinidad and Tobago,1990,0.2
+Trinidad and Tobago,1991,0.3
+Trinidad and Tobago,1992,0.4
+Trinidad and Tobago,1993,0.5
+Trinidad and Tobago,1994,0.6
+Trinidad and Tobago,1995,0.8
+Trinidad and Tobago,1996,0.9
+Trinidad and Tobago,1997,1
+Trinidad and Tobago,1998,1.1
+Trinidad and Tobago,1999,1.1
+Trinidad and Tobago,2000,1.2
+Tunisia,1990,0.06
+Tunisia,1991,0.06
+Tunisia,1992,0.06
+Tunisia,1993,0.06
+Tunisia,1994,0.06
+Tunisia,1995,0.06
+Tunisia,1996,0.06
+Tunisia,1997,0.06
+Tunisia,1998,0.06
+Tunisia,1999,0.06
+Tunisia,2000,0.06
+Turkey,1990,0.06
+Turkey,1991,0.06
+Turkey,1992,0.06
+Turkey,1993,0.06
+Turkey,1994,0.06
+Turkey,1995,0.06
+Turkey,1996,0.06
+Turkey,1997,0.06
+Turkey,1998,0.06
+Turkey,1999,0.06
+Turkey,2000,0.06
+Uganda,1990,10.2
+Uganda,1991,10.7
+Uganda,1992,10.5
+Uganda,1993,10.2
+Uganda,1994,9.8
+Uganda,1995,9.3
+Uganda,1996,8.8
+Uganda,1997,8.4
+Uganda,1998,8
+Uganda,1999,7.6
+Uganda,2000,7.3
+Ukraine,1990,0.1
+Ukraine,1991,0.2
+Ukraine,1992,0.2
+Ukraine,1993,0.2
+Ukraine,1994,0.3
+Ukraine,1995,0.3
+Ukraine,1996,0.4
+Ukraine,1997,0.5
+Ukraine,1998,0.7
+Ukraine,1999,0.8
+Ukraine,2000,0.9
+United Kingdom,1990,0.1
+United Kingdom,1991,0.1
+United Kingdom,1992,0.1
+United Kingdom,1993,0.1
+United Kingdom,1994,0.1
+United Kingdom,1995,0.1
+United Kingdom,1996,0.1
+United Kingdom,1997,0.1
+United Kingdom,1998,0.1
+United Kingdom,1999,0.1
+United Kingdom,2000,0.1
+United States,1990,0.5
+United States,1991,0.5
+United States,1992,0.5
+United States,1993,0.5
+United States,1994,0.5
+United States,1995,0.5
+United States,1996,0.5
+United States,1997,0.5
+United States,1998,0.5
+United States,1999,0.5
+United States,2000,0.5
+Uruguay,1990,0.1
+Uruguay,1991,0.1
+Uruguay,1992,0.1
+Uruguay,1993,0.1
+Uruguay,1994,0.1
+Uruguay,1995,0.2
+Uruguay,1996,0.2
+Uruguay,1997,0.2
+Uruguay,1998,0.2
+Uruguay,1999,0.3
+Uruguay,2000,0.3
+Uzbekistan,1990,0.06
+Uzbekistan,1991,0.06
+Uzbekistan,1992,0.06
+Uzbekistan,1993,0.06
+Uzbekistan,1994,0.06
+Uzbekistan,1995,0.06
+Uzbekistan,1996,0.06
+Uzbekistan,1997,0.06
+Uzbekistan,1998,0.06
+Uzbekistan,1999,0.06
+Uzbekistan,2000,0.06
+Vietnam,1990,0.06
+Vietnam,1991,0.06
+Vietnam,1992,0.06
+Vietnam,1993,0.1
+Vietnam,1994,0.1
+Vietnam,1995,0.1
+Vietnam,1996,0.1
+Vietnam,1997,0.1
+Vietnam,1998,0.2
+Vietnam,1999,0.2
+Vietnam,2000,0.2
+Zambia,1990,12.7
+Zambia,1991,13.6
+Zambia,1992,14.2
+Zambia,1993,14.6
+Zambia,1994,14.9
+Zambia,1995,15
+Zambia,1996,14.9
+Zambia,1997,14.8
+Zambia,1998,14.7
+Zambia,1999,14.6
+Zambia,2000,14.4
+Zimbabwe,1990,10.1
+Zimbabwe,1991,13.6
+Zimbabwe,1992,17.2
+Zimbabwe,1993,20.6
+Zimbabwe,1994,23.3
+Zimbabwe,1995,25.1
+Zimbabwe,1996,26.2
+Zimbabwe,1997,26.5
+Zimbabwe,1998,26.3
+Zimbabwe,1999,25.7
+Zimbabwe,2000,24.8
