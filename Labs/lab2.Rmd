@@ -1,0 +1,57 @@
+---
+title: "Stat 261, lab 2"
+author: "Brad McNeney"
+output: 
+  html_document:
+    fig_width: 6
+    fig_height: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## HIV prevalence from WHO
+
+- Estimated HIV prevalence was obtained from the 
+`gapminder` website https://www.gapminder.org/data/
+    * Estimated number of people living with HIV per 100 population of age group 15-49.
+    * Original data source is the UNAIDS online database at 
+    http://www.aidsinfoonline.org
+    
+- A spreadsheet of the data are available in the Labs folder of the class GitHub repository. We 
+can read in these data as follows (we'll learn about reading in data in week 5):
+
+```{r}
+library(tidyverse)
+hiv <- read.csv("HIVprev.csv",stringsAsFactors = FALSE)
+hiv <- select(hiv,Country, year, prevalence)
+```
+
+Take a look at the top and bottom few
+lines of raw data.
+
+```{r}
+head(hiv)
+tail(hiv)
+summary(hiv)
+```
+
+1. Plot time series of HIV prevalence by year for each country.
+
+
+2. Redo the above plot but experiment with different `alpha` values. What problem
+does setting a small `alpha` overcome? What feature of the graph 
+is hidden when we do not set `alpha`?
+
+3. In the following code chunk we create a new dataset comprised of countries that had HIV prevalence 
+greater than 10% in one or more of the years monitored (we will learn about this kind of 
+"data wrangling" in week 5).
+
+```{r}
+cc <- c("Botswana","Central African Republic","Congo","Kenya","Lesotho","Malawi","Namibia","South Africa","Swaziland","Uganda","Zambia","Zimbabwe")
+hihiv <- filter(hiv,Country %in% cc)
+```
+
+Add red lines for the above countries to your time series plot.
