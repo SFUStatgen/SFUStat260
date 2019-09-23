@@ -1,0 +1,301 @@
+---
+title: 'Stat 260, Lecture 4, Data Transformation'
+author: "Brad McNeney"
+output: 
+  beamer_presentation:
+    includes:
+      in_header: header_pagenum.tex
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message=FALSE,warning=FALSE,fig.height=4)
+```
+
+
+## Load packages
+
+\scriptsize
+
+```{r, message=FALSE, warning=FALSE}
+library(gapminder)
+library(dplyr)
+library(nycflights13)
+head(flights)
+```
+
+## Reading
+
+* Workflow basics: Chapter 2 of printed text, Chapter 4 of online text
+* Data transformation: Chapter 3 of printed text, Chapter 5 of online text
+* dplyr cheatsheet at [https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf]
+
+
+## Data manipulation with `dplyr`
+
+* We have seen the need to manipulate datasets when studying visualization:
+
+\scriptsize
+```{r}
+gapminder <- mutate(gapminder, log10GdpPercap = log10(gdpPercap))
+gm07 <- filter(gapminder,year==2007)
+```
+
+\normalsize
+
+* In this lecture we will cover data manipulation more systematically
+
+## `dplyr` 
+
+* The `tidyverse` package `dplyr` contains intuitive tools for 
+manipulating data sets.
+* These tools are named after verbs.
+* The five key verbs (functions) are
+    1. `filter()` to select subsets of observations (rows).
+    2. `arrange()` to reorder rows
+    3. `select()` to select variables (columns)
+    4. `mutate()` to create new variables from existing ones, and
+    5. `summarize()` to calculate summary statistics
+
+## Filter rows with `filter()`
+
+* We previously used `filter()` to extract a subset of the 
+`gapminder` dataset based on a logical condition.
+
+\scriptsize
+```{r}
+gm07 <- filter(gapminder,year==2007)
+```
+
+
+* `gm07` now contains the rows of `gapminder` in which the variable
+`year` is equal to 2007.
+* The `==` is a comparison. 
+* We specify the rows to extract with comparison and logical operators.
+
+## Relational (comparison) operators
+
+\scriptsize
+
+* The basic relational operators are described in `?Comparison`:
+`==` is equal, `!=` is not equal, `>` is greater than, `<` is
+less than, `>=` is greater than or equal, `<=` is less than or equal.
+* Watch out for finite-precision arithmetic.
+
+```{r}
+2>3; 2/2 == 1; sqrt(2)^2 == 2; near(sqrt(2)^2,2) 
+```
+
+## Logical operators
+
+\scriptsize
+
+- The basic logical operators are described in `?Logic`: 
+`!` is NOT, `&` is AND, `|` is OR.
+```{r}
+!TRUE ; TRUE | FALSE & FALSE; (TRUE | FALSE) & FALSE # eval parentheses first
+```
+
+- Relational comparisons can be combined with logicals
+```{r}
+(2==2) | (2==3) 
+```
+
+- Logical operations between vectors are element-wise.
+```{r}
+x <- c(TRUE,TRUE,FALSE); y <- c(FALSE,TRUE,TRUE)
+!x ; x&y ; x|y
+```
+
+## `filter()` example
+
+* Extract all flights from January, with departure delay of 1 or more:
+
+\scriptsize
+
+```{r}
+jan13 <- filter(flights, month==1 & dep_delay > 1)
+```
+
+\normalsize
+
+* **Exercises** Extract all flights from January or February.
+Extract all flights from January or February that have 
+a departure delay of 1 or more.
+
+
+
+
+## Many logicals and `%in%`
+
+* In lab 2 we saw the `%in%` operator:
+
+\scriptsize
+
+```{r}
+hiv <- read.csv("../Labs/HIVprev.csv",stringsAsFactors = FALSE)
+cc <- c("Botswana","Central African Republic","Congo","Kenya","Lesotho","Malawi","Namibia","South Africa","Swaziland","Uganda","Zambia","Zimbabwe")
+hihiv <- filter(hiv,Country %in% cc)
+```
+
+\normalsize
+
+* This is a convenient alternative to 
+
+\scriptsize
+
+```
+filter(hiv,Country=="Botswana" | Country=="Central African Republic", etc. )
+```
+
+\normalsize
+
+* **Exercise** Extract all flights operated by United, American or Delta.
+
+
+
+## Missing data: `NA`
+
+* In R, missing data (not available) is denoted by `NA`.
+* `NA` takes precendence in all comparison and arithmetic operations,
+and almost all logical operations.
+
+\scriptsize
+
+```{r}
+NA > 3; NA+10; NA & TRUE; NA | TRUE
+```
+
+
+## `is.na()`
+
+* Test for `NA` with `is.na()`:
+
+\scriptsize
+
+```{r}
+vv <- c(10,NA,1)
+is.na(vv)
+vv>1
+is.na(vv) | vv> 1
+```
+
+\normalsize
+
+* **Exercise** Extract all flights from January with missing departure delay.
+
+
+## Sorting with `arrange()`
+
+* `arrange()` changes the order of rows, putting `NA`s last
+
+\scriptsize
+
+```{r}
+vv <- tibble(x=c(NA,10,10,1),y=c("one","two","three","four"))
+arrange(vv,x)
+arrange(vv,x,y)
+```
+
+## `arrange()` exercise
+
+* **Exercise** Arrange the `mpg` data set 
+by number of cylinders (variable `cyl`) and then engine displacement (variable `displ`)
+within cylinders. Repeat the above for a data set comprised of
+only the Hondas (see the variable `manufacturer`).
+
+
+## Selecting columns with `select()`
+
+* Where as `filter()` subsets by row, `select()` subsets by column. 
+    * We specify columns by their name, possibly using helper functions.
+
+* Select month, day, hour and minute from `flights`:
+
+\scriptsize
+
+```{r}
+select(flights,month,day,hour,minute)
+```
+
+## Ranges
+
+* Select or de-select a range of columns with `:`
+
+
+\tiny
+
+```{r}
+select(flights,month:minute)
+select(flights,-(month:minute))
+```
+
+## Helper functions
+
+* Some useful helper functions are `starts_with()`, `ends_with()` and `contains()`.
+    * See `?select` for a complete list.
+    
+\scriptsize
+
+```{r}
+select(flights,contains("dep"))
+```
+
+* **Exercise** Select all variables with "dep" or "arr" in the name.
+
+## Add new variables with `mutate()`
+
+* We've used `mutate()` to add log-GDP to the `gapminder` data set.
+
+\scriptsize
+
+```{r}
+gapminder <- mutate(gapminder, log10GdpPercap = log10(gdpPercap))
+```
+
+\normalsize
+
+* You can use variables as they are created by `mutate()`:
+
+\scriptsize
+
+```{r}
+flights <- mutate(flights,gain = arr_delay - dep_delay, gainh = gain/60)
+```
+
+## Summaries and grouping
+
+* A common task is "split-apply-combine": We want to 
+split a data set into groups defined by one variable, apply a statistical
+summary to each group, and then combine the results.
+* With `dplyr` we use `group_by()` and `summarize()`.
+
+\scriptsize
+
+```{r}
+by_day <- group_by(flights,month,day)
+summarize(by_day,count = n(), delay = mean(dep_delay,na.rm=TRUE))
+```
+
+\normalsize
+
+* Note: `mean()` returns `NA` whenever
+there are missing values, unless we set `na.rm=TRUE`, 
+
+## Combining operations with the pipe
+
+* The pipe `%>%` can be used to chain together operations,
+without the need to store intermediate results
+
+\scriptsize
+
+```{r}
+select(flights,month,day,dep_delay) %>% 
+  group_by(month,day) %>% 
+  summarize(count = n(), delay=mean(dep_delay,na.rm=TRUE)) 
+```
+
+\normalsize
+
+* Notice that we omit the data set name when a function receives
+data from the pipe.

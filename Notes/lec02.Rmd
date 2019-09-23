@@ -1,5 +1,5 @@
 ---
-title: 'Stat 260, Lecture 2'
+title: 'Stat 260, Lecture 2, Data Visualization I'
 author: "Brad McNeney"
 output: 
   beamer_presentation:

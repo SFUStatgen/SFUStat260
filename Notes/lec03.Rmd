@@ -1,5 +1,5 @@
 ---
-title: 'Stat 260, Lecture 3'
+title: 'Stat 260, Lecture 3, Data Visualization II'
 author: "Brad McNeney"
 output: 
   beamer_presentation:
@@ -167,7 +167,7 @@ to specify different groups on different layers.
 
 \scriptsize
 
-```{r, fig.width=4, fig.height=2.2}
+```{r, fig.width=4, fig.height=1.8}
 ggplot(gapminder,aes(x=year,y=lifeExp,color=continent)) + 
   geom_line(aes(group=country),alpha=0.2) + 
   geom_smooth(aes(group=continent),se=FALSE)
