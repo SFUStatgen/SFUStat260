@@ -50,7 +50,7 @@ Use the `rename()` function to rename this column  `Country`.
 columns from the data frame.
 
 
-3. Sort the data in descending on prevalence in 2011. Print the first 6 rows of 
+3. Sort the data in descending order of prevalence in 2011. Print the first 6 rows of 
 your final data set.
 
 
