@@ -1,0 +1,58 @@
+---
+title: "Stat 261, lab 3"
+author: "Brad McNeney"
+output: 
+  html_document:
+    fig_width: 6
+    fig_height: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## HIV prevalence from WHO
+
+- The HIV prevalence data from lab 2 was modified from its raw form. 
+In this lab we will work with the raw data.
+
+- A spreadsheet of the data `HIVprevRaw.csv` is available in the Labs folder of the class GitHub repository. We 
+can read in these data as follows (we'll learn about reading in data in week 5):
+
+```{r}
+library(tidyverse)
+hiv <- read.csv("HIVprevRaw.csv",stringsAsFactors = FALSE)
+```
+
+- Take a look at the top few lines of raw data.
+
+```{r}
+head(hiv)
+```
+
+- Make a copy of `hiv` for use in exercise 4.
+
+```{r}
+hivcopy <- hiv
+```
+
+
+- In exercises 1 - 3, save the results of each data manipulation in 
+`hiv`. In exercise 4  you will use the copy `hivcopy`.
+
+1. The first column of the data frame is the country, but it
+has been named`Estimated.HIV.Prevalence.....Ages.15.49.1`.
+Use the `rename()` function to rename this column  `Country`.
+
+
+2. The data from 1979 to 1989 is very sparse. Remove these
+columns from the data frame.
+
+
+3. Sort the data in descending on prevalence in 2011. Print the first 6 rows of 
+your final data set.
+
+
+4. Use the copy `hivcopy` and the forward pipe to chain the data manipulations 
+of exercises 1-3.

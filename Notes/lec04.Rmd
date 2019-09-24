@@ -197,12 +197,24 @@ arrange(vv,x)
 arrange(vv,x,y)
 ```
 
-## `arrange()` exercise
+## Descending order
 
-* **Exercise** Arrange the `mpg` data set 
-by number of cylinders (variable `cyl`) and then engine displacement (variable `displ`)
-within cylinders. Repeat the above for a data set comprised of
-only the Hondas (see the variable `manufacturer`).
+* The default in `arrange()` is increasing order.
+* Use `desc()` for descending order.
+
+\scriptsize
+
+```{r}
+arrange(vv,desc(x))
+```
+
+\normalsize
+
+
+* **Exercise** Arrange the `mpg` data set by *decreasing order* in the 
+number of cylinders (variable `cyl`) and *increasing order* 
+by engine displacement (variable `displ`)
+within cylinders. 
 
 
 ## Selecting columns with `select()`
@@ -228,6 +240,17 @@ select(flights,month,day,hour,minute)
 ```{r}
 select(flights,month:minute)
 select(flights,-(month:minute))
+```
+
+## Renaming variables
+
+* You can rename variables as they are selected.
+* To rename a variable without selecting it use `rename()`.
+
+\scriptsize
+
+```{r}
+flights <- rename(flights,tail_num = tailnum)
 ```
 
 ## Helper functions
