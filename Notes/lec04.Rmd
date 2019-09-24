@@ -150,7 +150,10 @@ filter(hiv,Country=="Botswana" | Country=="Central African Republic", etc. )
 
 \normalsize
 
-* **Exercise** Extract all flights operated by United, American or Delta.
+* **Exercise** The `nycflights13` package includes a table `airlines` that
+translates the two-letter airline codes in `flights` into the 
+full names of the airlines. Extract all flights operated by United, American
+or Delta.
 
 
 
