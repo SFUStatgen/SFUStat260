@@ -130,7 +130,7 @@ rows of a data frame or tibble, but we can also use `[`.
 ```{r}
 tt[2,]
 tt[1:2,]
-dd[2,] # returns a vector
+dd[2,] 
 dd[1:2,]
 ```
 
@@ -145,8 +145,8 @@ the variable `a2 <- c("cat","tiger")`. We can combine logicals
 with `[` to subset. What do the following return?
     * `myd[,names(myd) %in% a1]`
     * `myd[,names(myd) %in% a2]`
-    * `myd[,names(myt) %in% a1]`
-    * `myd[,names(myt) %in% a2]`
+    * `myt[,names(myt) %in% a1]`
+    * `myt[,names(myt) %in% a2]`
 
 
 ## Importing data
@@ -176,7 +176,7 @@ hiv <- read_csv("../Labs/HIVprev.csv")
 ## Other `read_` functions
 
 * CSV stands for comma-separated files, aka comma-delimited files
-* `read_csv()` reads semicolon-delimited files,
+* `read_csv2()` reads semicolon-delimited files,
 * `read_tsv()` reads tab-delimited files,
 * `read_delim()` reads files with user-specified delimiter.
 
@@ -206,8 +206,8 @@ This is a header
 that you should skip
 # this is a comment
 A,B,C
-1,2,3
-4,5,6 # another comment
+1,2.2,1999-05-10
+4,5.5,2001-04-04 # another comment
 ```
 
 ## 
