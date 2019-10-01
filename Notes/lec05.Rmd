@@ -309,3 +309,25 @@ str(dat$A)
 * For reproducibility your R scripts should have a manual
 specification of the parsing of each column, rather than
 relying on guesses that can change as your data changes.
+
+## Exercise
+
+* Copy the following data to a file and read it in to R.
+Specify the column types yourself,
+based on the descriptions in the header of the
+file. Hint: read about `col_factor()`.
+
+\scriptsize
+
+```
+# Variable fert is a factor that records the
+# type of fertilizer used in the experiment,
+# date records the date and time of the experiment 
+# and yield is the yield of corn.
+fert,date,yield
+F1A2,2018/04/01/12/30,22.56
+F1A1,2018/04/02/12/00,26.06
+F2A2,2018/04/01/12/45,32.03
+F2A1,2018/04/02/12/00,33.21
+```
+
