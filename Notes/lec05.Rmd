@@ -1,0 +1,311 @@
+---
+title: 'Stat 260, Lecture 5, Reading Data'
+author: "Brad McNeney"
+output: 
+  beamer_presentation:
+    includes:
+      in_header: header_pagenum.tex
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message=FALSE,warning=FALSE,fig.height=4)
+```
+
+
+## Load packages
+
+\scriptsize
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(nycflights13)
+```
+
+## Reading
+
+* Workflow: scripts: Chapter 4 of printed text, Chapter 6 of online text
+* Introduction to data wrangling: Part II introduction of printed text, Chapter 9 of online text
+* Tibbles: Chapter 7 of printed text, Chapter 10 of online text
+* Reading data with readr: Chapter 8 of printed text, Chapter 11 of online text
+* Data import (readr/tidyr) cheatsheet at [https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf]
+
+
+## Tibbles
+
+* In base R, the data structure used to hold data sets is the data frame.
+* We can make a data frame from vectors as follows:
+
+\scriptsize
+
+```{r}
+dd <- data.frame(x=c(NA,10,1),y=c("one","two","three"))
+dd
+```
+
+\normalsize
+
+* The tidyverse authors find the default behaviour of data frames to 
+be odd, and so implemented an improvement called tibbles:
+
+\scriptsize
+```{r}
+tt <- tibble(x=c(NA,10,1),y=c("one","two","three"))
+tt
+```
+
+
+## data frames to tibbles and back
+
+* data frames can be coerced to tibbles and *vice versa*.
+
+\scriptsize
+```{r}
+as_tibble(dd)
+as.data.frame(tt)
+```
+
+\normalsize
+
+## tibble printing
+
+* One difference between data frames and tibbles is how they are printed.
+
+* Printing a data frame: all rows and columns, up to your R session's `max.print`.
+
+* Printing a tibble: the first 10 rows, as many columns as fit the screen,
+and the column data types.
+
+\tiny
+
+```{r}
+flights
+```
+
+\normalsize
+
+## Control printing of tibbles
+
+* To see all rows/columns of a tibble, best to `View()` it.
+
+* But you can also print all rows and columns by setting
+`options(dplyr.print_min=Inf)` and `options(tibble.width=Inf)`.
+
+## Extracting columns as vectors
+
+* Use the basic tools `$` and `[[` to extract a variable from
+a tibble or data frame:
+
+\scriptsize
+
+```{r}
+dd$x  
+tt$x
+dd[["x"]]
+tt[["x"]]
+```
+
+
+## Subsetting: columns
+
+* Using `select()` is the preferred method to subset columns
+of a data frame or tibble, but we can also use the more
+basic tool  `[`; e.g.,
+
+\tiny
+```{r}
+tt[,"x"]
+tt[,c("x","y")]
+dd[,"x"] # returns a vector
+dd[,c("x","y")]
+```
+
+
+## Subsetting: rows
+
+* Using `filter()` is the preferred method to extract 
+rows of a data frame or tibble, but we can also use `[`.
+
+\tiny
+```{r}
+tt[2,]
+tt[1:2,]
+dd[2,] # returns a vector
+dd[1:2,]
+```
+
+## Exercise
+
+* Create a data frame `myd` and tibble `myt` that each have 
+columns named `cat`, `dog` and `mouse`. Each column should be
+of length three, but the values in each column are up to you.
+* What do `names(myd)` and `names(myt)` return?
+* Create the variable `a1 <- c("cat","dog","bird","fish")` and
+the variable `a2 <- c("cat","tiger")`. We can combine logicals
+with `[` to subset. What do the following return?
+    * `myd[,names(myd) %in% a1]`
+    * `myd[,names(myd) %in% a2]`
+    * `myd[,names(myt) %in% a1]`
+    * `myd[,names(myt) %in% a2]`
+
+
+## Importing data
+
+* We read in the HIV prevalence data with the base R function `read.csv()`,
+which returned a data frame.
+
+* We will now discuss the tidyverse equivalent, `read_csv()`,
+which returns a tibble.
+
+\scriptsize
+```{r, message=TRUE}
+hiv <- read_csv("../Labs/HIVprev.csv")
+```
+
+
+## Why use `read_csv()` instead of `read.csv()`?
+
+* `read_csv()` reports how each column of the CSV file was "parsed" (more on this later),
+* returns a tibble, 
+* uses `stringsAsFactors = FALSE` as the default,
+\tiny (recall `hiv <- read.csv("../Labs/HIVprev.csv",stringsAsFactors = FALSE)`) \normalsize
+* is faster, and
+* is more consistent across operating systems.
+
+
+## Other `read_` functions
+
+* CSV stands for comma-separated files, aka comma-delimited files
+* `read_csv()` reads semicolon-delimited files,
+* `read_tsv()` reads tab-delimited files,
+* `read_delim()` reads files with user-specified delimiter.
+
+* Exercise: A file called "chicken.C" contains the following data on two 
+chickens, with IDs 22 and 33, who laid 2 and 1 eggs, respectively.
+\scriptsize (Reference: https://isotropic.org/papers/chicken.pdf) \normalsize
+How would you read this data file into R? 
+
+\scriptsize
+```
+IDCeggs
+22C2
+33C1
+```
+
+## Skip and comments
+
+* Some files contain a header that describes the data,
+aka meta-data, that we should skip when reading.
+* Some files include comments that start with
+common characters, such as "#".
+* Example file
+
+\scriptsize
+```
+This is a header
+that you should skip
+# this is a comment
+A,B,C
+1,2,3
+4,5,6 # another comment
+```
+
+## 
+
+\scriptsize
+
+```{r,message=TRUE}
+read_csv("lec05exfile.csv",skip=2,comment="#")
+```
+
+## Parsing a vector
+
+* `read_csv()` returns a message that described how
+each column of the input file was parsed.
+* Parsing a file depends on the `parse_*` functions, such as 
+`parse_number()`, that parse vectors. 
+* The `parse_*` functions take a vector of character strings as input and
+return a vector of a given mode, handling missing
+values as specified by the user.
+
+\scriptsize
+
+```{r}
+parse_number(c("$10.55","33%","Number is 44","."),na=".")
+```
+
+\normalsize
+
+* The parse functions are designed to handle data
+formats and character sets from around the world. 
+* In this course we assume North American data
+formats and character set.
+* See the text if you need other formats.
+
+## Other parsing functions
+
+* `parse_logical()`,  `parse_integer()`, `parse_double()`, `parse_character()`,
+`parse_factor()`, `parse_datetime()`, `parse_date()` and `parse_time()`.
+* Use the `str()` function to see the mode of an object:
+
+\scriptsize
+
+```{r}
+str(parse_logical(c("TRUE","FALSE")))
+str(parse_logical(c("1","0")))
+str(parse_integer(c("1","0")))
+str(parse_double(c("1","0")))
+str(parse_factor(c("1","0")))
+```
+
+## Dates and times
+
+* These parsers have default formats for dates and times,
+but your best bet is to specify the format yourself.
+* The formatting rules are described in `help(strptime)`.
+
+\scriptsize
+
+```{r}
+dd <- c("05/14/1966/12/34/56","04/02/2002/07/43/00","08/17/2005/07/22/00","08/12/2008/16/20/00")
+dd <- parse_datetime(dd,format = "%m/%d/%Y/%H/%M/%S")
+str(dd)
+mean(dd)
+diff(dd)
+```
+
+## Parsing files
+
+* `read_csv()` and other read functions guess at the format of each
+column. Sometimes this works, sometimes not.
+* You can read about how these functions guess in the text.
+* Here we'll focus on manually specifying the format.
+
+\scriptsize
+
+```{r,message=TRUE}
+dat <- read_csv("lec05exfile.csv",skip=2,comment="#")
+```
+
+##
+
+* Cut-and-paste the guess and replace parsers as necessary
+
+\scriptsize
+
+```{r,message=TRUE}
+dat <- read_csv("lec05exfile.csv",skip=2,comment="#",
+                col_types=cols(
+                  A = col_integer(),
+                  B = col_double(),
+                  C = col_date(format = "%Y-%m-%d")
+                )
+)
+str(dat$A)
+```
+
+\normalsize
+
+* For reproducibility your R scripts should have a manual
+specification of the parsing of each column, rather than
+relying on guesses that can change as your data changes.
