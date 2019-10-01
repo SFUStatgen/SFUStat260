@@ -1,0 +1,30 @@
+---
+title: "Stat 261, lab 4"
+author: "Brad McNeney"
+output: 
+  html_document:
+    fig_width: 6
+    fig_height: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+The data for this lab are in the file `MLLT3_small.vcf`. These are data
+on genomic variants in a gene called MLLT3. The file 
+includes many meta-data lines that start with `##`, and then a
+header for the data columns that starts with `#`. The 
+separator for the data columns is the tab character.
+
+1. Use the appropriate `read_*` function to read these data into R, skipping the
+meta-data lines.
+
+2. Use the `spec()` function to print a list of the column specifications. 
+Copy this and make changes so that the `REF` and `ALT` variables 
+are read in as factors.
+
+
+3. Rename the first column `CHROM`. Hint: Beware the #-sign in the column name. This
+is what the text calls a "nonsyntactic" name. How do you refer to such a name?
