@@ -1,0 +1,44 @@
+---
+title: "Lab 5"
+author: "Brad McNeney"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+
+## HIV prevalence from WHO
+
+* We used a tidy version of the HIV prevalence data in lab 2, and
+saw the raw version in lab 3. In this lab we will tidy the latter into the former.
+
+```{r,message=TRUE}
+hiv <- read_csv("HIVprevRaw.csv")
+```
+
+(The columns for 1988 and 1989 are completely empty and 
+were read in as logical. We will be removing these and so won't
+worry about over-riding the logical with double.)
+
+
+1. The first column of the data frame is the country, but it
+has been named`Estimated HIVPrevalence% - (Ages 15 49 1)`.
+Use the `rename()` function to rename this column  `Country`.
+(Hint: The current variable name contains special characters
+and will need to be enclosed in quotes.)
+
+
+2. The data from 1979 to 1989 is very sparse. Remove these
+columns from the data frame.
+
+3. Gather the yearly prevalence estimates into key, value pairs
+with `year` as the key and `prevalence` as the value. When
+you gather, remove explicity missing values. After gathering,
+sort on "Country". 
+
