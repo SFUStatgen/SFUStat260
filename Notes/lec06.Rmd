@@ -1,0 +1,397 @@
+---
+title: 'Stat 260, Lecture 6, Tidy Data'
+author: "Brad McNeney"
+output: 
+  beamer_presentation:
+    includes:
+      in_header: header_pagenum.tex
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message=FALSE,warning=FALSE,fig.height=4)
+```
+
+
+## Load packages and datasets
+
+\scriptsize
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+table1 <- read_csv("lec06table1.csv",
+                   col_types=cols(
+                     country=col_character(),
+                     year=col_integer(),
+                     cases=col_integer(),
+                     population=col_integer()
+                   )
+)
+```
+
+## Create tibbles used in demos
+
+\scriptsize
+
+```{r}
+table2 <- table1 %>% 
+  gather(cases,population,key="type",value="count") %>%
+  arrange(country,year)
+table3 <- table1 %>%
+  mutate(rate = paste(cases,population,sep="/")) %>%
+  select(-cases,-population)
+table4a <- table1 %>%
+  select(country,year,cases) %>%
+  spread(key=year,value=cases)
+table4b <- table1 %>%
+  select(country,year,population) %>%
+  spread(key=year,value=population)
+```
+
+## Reading
+
+* Tidy Data: Chapter 9 of printed text, Chapter 12 of online text.
+* Advanced: 
+Wickham (2014) [https://www.jstatsoft.org/index.php/jss/article/view/v059i10/v59i10.pdf]
+* Data import (readr/tidyr) cheatsheet at [https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf]
+
+
+## Tidy Data
+
+* In a tidy dataset,
+    * each variable has its own column,
+    * each observation has its own row, and 
+    * each value has its own cell.
+* The tibble `table1` that we read in earlier is tidy:
+
+\scriptsize
+
+```{r}
+table1
+```
+
+
+## Why is table1 tidy?
+
+* It is never straightforward to answer this. 
+
+* These are WHO data on Tuberculosis cases.
+    * The  variables are country, year, number of cases and population
+    * The observations are contry/year combinations.
+    * Each value is in its own cell.
+    
+* `country` and `year` describe the observational unit, and so there 
+must be one row for each, and there must be variables that record
+`country` and `year`.
+* `cases` and `population` are what we measure on the observational unit and 
+so must be variables.
+
+## Non-tidy data
+
+* There are many ways to be non-tidy.
+* **Exercise:** Why are `table2` and `table4a` not tidy?
+
+\scriptsize
+
+```{r}
+print(table2,n=6)
+print(table4a,n=6)
+```
+
+## Why tidy?
+
+* Good statistics (exploratory, visualization, modelling)
+requires that we identify the observational unit.
+* R is efficient at computing with vectors, so variables as column-vectors
+are efficient.
+* Tidyverse tools require it; e.g.,
+
+\scriptsize
+
+```{r}
+table1 %>% mutate(rate=cases/population*100000)
+```
+
+##
+
+\scriptsize
+
+```{r}
+table1 %>% group_by(year) %>% summarize(sum(cases)) 
+ggplot(table1,aes(x=year,y=cases,color=country)) + geom_point()
+```
+
+## Exercises
+
+* Compute `rate` from `table2`.
+* Compute `rate` from `table4a` and `table4b`.
+
+## Gathering
+
+* The problem with table 4a is that the cases variable is
+split across the columns `1999` and `2000` that must be "gathered" into one. 
+* Each value of `cases` needs a label (key) to tell us which year it comes from.
+
+\scriptsize
+
+```{r}
+table4a %>% gather(`1999`,`2000`,key=year,value=cases)
+```
+
+\normalsize
+
+* **Exercise** Repeat for `table4b`
+
+## Gathering: another example
+
+Billboard Top 100 rankings of songs
+
+\scriptsize
+
+```{r}
+bb <- read_csv("billboard.csv")
+bb
+```
+
+## Structure of the Billboard table
+
+- Columns `year` through `date.peaked` describe the song,
+then `x1st.week` through `x76th.week` are the 
+chart positions for the first through 76th weeks. 
+    - If a song is on the chart for less than 76 weeks, its position is `NA` for any missing weeks.
+- Weeks are not variables, they are the time data for the 
+time series.
+
+## Tidying the Billboard data
+
+- Main step is to gather the rankings in the different
+weeks into a `rank` variable. 
+- Before gathering, will select/rename some of the variables.
+- After gathering, will create some new variables and 
+sort the data frame.
+
+## Select and rename
+
+- Won't need `time` or `genre`. 
+    - Recall that `select()` from `dplyr` can use `-` to de-select
+- Rename `artist.inverted`
+    - Recall that `rename()` from `dplyr` takes arguments of the form
+    `newname = oldname`
+
+\footnotesize
+
+```{r}
+bb <- 
+  bb %>% select(-time,-genre) %>% 
+  rename(artist = artist.inverted) 
+```
+
+## Gather the weeks into a "long" version of the Billboard data
+
+- Leave each song info variable as-is.
+- The "values", are the chart positions.
+- The weeks are the "keys" for these values.
+- We want to create key-value pairs for each observation.
+    - There will be missing values, which we can remove.
+
+## 
+
+\scriptsize
+```{r}
+bb %>% gather(x1st.week:x76th.week,key=week,value=rank,na.rm=TRUE) %>%
+  mutate(week= parse_number(week)) %>% # replace, e.g., x1st.week with 1, ...
+  arrange(artist,track,week)
+```
+
+## Spreading
+
+* Whereas gathering makes a wide dataset long, 
+spreading makes a long dataset wide.
+* Spread when observations are split across multiple rows.
+* E.G., `table2` has observations for each country/year split across 
+two rows:
+
+\scriptsize
+
+```{r}
+table2
+```
+
+
+## Spreading `table2`
+
+* The column `type` contains the keys for the values in `count` that
+belong in columns `cases` and `population`, respectively.
+
+\scriptsize
+
+```{r}
+table2 %>% spread(key=type,value=count)
+```
+
+* **Exercise** Select `country`, `year` and `cases` from `table1` and 
+use spread to obtain a table with rows for each year
+and columns for each country. (Note: such data is **not** tidy.)
+
+## Separating
+
+* `separate()` splits a column on a specified separator, or at
+a specified character number.
+
+\scriptsize
+
+```{r}
+print(table3,n=4)
+table3 %>% separate(rate,into=c("cases","population"),sep="/") %>% print(n=4)
+```
+
+\normalsize
+
+* Notice that `cases` and `population` are character.
+
+
+##
+
+\scriptsize
+
+```{r}
+table3 %>% separate(rate,into=c("first","remainder"),sep=1)
+```
+
+## Convert type of columns after separating
+
+\scriptsize
+
+```{r}
+table3 %>% separate(rate,into=c("cases","population"),sep="/",
+                    convert=TRUE)
+```
+
+## Missing data
+
+* When we used `gather()` on the Billboard data we set
+`na.rm=TRUE` to remove weeks where a given track was
+not on the charts:
+
+\scriptsize
+
+```{r}
+bb %>% select(track,x23rd.week:x25th.week) %>% print(n=4)
+```
+
+\normalsize
+
+* The missings in `bb` are "explicit"; when `gather()` removes them
+they become "implicit" (e.g., no row for week 25 for track 4).
+
+## Making implicit missing data explicit
+
+* `spread()` will make implicit missing values explicit if
+needed for a row.
+
+\scriptsize
+
+```{r}
+stocks <- tibble( year=c(2015,2016,2016), qtr = c(1,1,2), 
+                  return = c(1.0,2.0,3.0))
+stocks
+stocks %>% spread(key=year,value=return) 
+```
+
+## Make implicit explicit with `complete()`
+
+* `complete()` creates rows for all combinations of input variables
+and fills in missing values where necessary.
+
+\scriptsize
+
+```{r}
+stocks %>% complete(year,qtr)
+```
+
+
+## Case Study: WHO TB data
+
+* The `who` dataset comes with `tidyr`. We'll use a related (less tidy)
+version from the WHO website.
+
+\scriptsize
+
+```{r}
+tb <- read_csv("tb.csv")
+```
+
+## Structure of TB table
+
+\small
+
+- First column is 2-letter country code, second is year,
+third is number of new cases for that country/year.
+- Then come TB counts for different gender/age categories.
+    - `new_sp` is "new cases by positive pulmonary smear assay"
+    - gender is `m` or `f`
+    - two special age categories 0-4, 5-14,
+    - age categories 0-14, 15-24, 25-34, 35-44, 45-54, 
+    55-65, 65+, unknown (`u`)
+- Gender/age columns are not variables, they are data
+on the observed units.
+- Tidy data would have one row for each country, year, gender
+and age category, with a column of counts 
+
+
+## Tidying the TB data
+
+- Recall structure of the data: country, year, count of new cases, counts of new cases by 
+gender/age categories.
+
+\scriptsize
+
+```{r}
+names(tb)[1:10]
+```
+
+\normalsize
+
+- Main step is to "gather" TB prevalence in the different
+gender/age categories into a count variable.
+    - Complicated by the coding of gender/age categories
+- Before gathering, will remove unneeded variables.
+
+
+## Remove variables
+
+- Won't need overall count
+- Special categories 0-4 and 5-14 overlap with 0-14 so remove
+- Age unknown not useful for analysing trends, so remove 
+
+\scriptsize
+```{r}
+tb <- select(tb,-new_sp, -contains("04"), -contains("514"),
+             -new_sp_mu, -new_sp_fu)
+tb
+```
+
+## Gather counts for demographic groups
+
+\footnotesize
+
+- Create demographic variable `demog` and count variable `count` 
+by gathering over all variables except `iso2` and `year`.
+
+```{r}
+tblong <- tb %>% 
+  gather(new_sp_m014:new_sp_f65,key=demog,value=count,na.rm=TRUE)
+tblong
+```
+
+## Separate gender from age category.
+
+\scriptsize
+
+- First remove `new_sp_`, then separate result on first column 
+```{r}
+maxlen <- max(nchar(tblong$demog))
+tb <- tblong %>% mutate(demog = substr(demog,8,maxlen)) %>%
+  separate(demog, into=c("gender","agecat"),sep=1) 
+tb
+```
