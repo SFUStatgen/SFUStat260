@@ -1,0 +1,366 @@
+---
+title: 'Stat 260, Lecture 7, Relational Data'
+author: "Brad McNeney"
+output: 
+  beamer_presentation:
+    includes:
+      in_header: header_pagenum.tex
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message=FALSE,warning=FALSE,fig.height=4)
+```
+
+
+## Load packages and datasets
+
+\scriptsize
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(nycflights13)
+# Example from http://www.itl.nist.gov/div897/ctg/dm/sql_examples.htm
+station <- read_csv("station.csv",col_types=cols(ID=col_integer()))
+stats <- read_csv("stats.csv",col_types=cols(ID=col_integer()))
+```
+
+## Reading
+
+* Relational Data: Chapter 10 of printed text, Chapter 13 of online text.
+    * In the sections on "Joins", we will focus on 
+    the left-join (in the **Mutating Joins** section)
+    and the semi-join (in the **Filtering Joins** section).
+* Data transformation (dplyr) cheatsheet at
+[https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf]
+
+
+## Multiple Tables
+
+* Modern data comes in multiple tables, called relational data. 
+* Such structure is motivated by relational database management
+systems (RDBMS) that revolutionized database management.
+* **Example**  `station` and `stats` tables for weather data:
+
+\scriptsize
+
+```{r}
+station
+stats
+```
+
+## Relations in the Weather Data
+
+* The relation, or connection between `station` and `stats` is the
+`ID` variable present in both. 
+* Think of the `ID`s as short-hand for the info in the `station` table.
+    * For example, `ID` 13 from `station` is short-hand for:
+    Phoenix AZ at latitude 33N and longitude 112W.  
+* The `stats` table is much more concise for not repeating the 
+info on each station.
+
+## Joining tables
+
+* However, in some cases we may wish to include information, such as station 
+name, in the `stats` table. 
+    * The text calls this a "mutating join".
+* Or, we may wish to filter weather measurements in `stats` based on
+the characteristics of the stations, such as latititude `Lat_N >= 40`.
+    * The text calls this a "filtering join".
+
+## The `nycflights13` Relational Data
+
+* We used the `flights` data from `nycflights13`. There are several other 
+tables in this package:
+
+\scriptsize
+
+```{r}
+print(airlines,n=3)
+print(airports,n=3)
+```
+
+##
+
+\scriptsize
+
+```{r}
+print(planes,n=3)
+print(weather,n=3)
+```
+
+## Relations in the `nycflights` Tables
+
+* Figure from Chapter 10 of R for Data Science:
+
+\vspace*{-.2in}
+
+\begin{center}
+\includegraphics[height=2.5in]{lec07relatdat.png}
+\end{center}
+
+* **Exercise:** The relationship between the `weather` and `airports` tables
+is not shown on the diagram. What is it?
+
+## Keys
+
+* The `ID` variable in the `station` table is its "primary key". 
+* It uniquely identifies observations (rows)
+in the table.
+* The `ID` column in the `stats` table is a "foreign key"
+that links to the `station` table.
+* Primary/secondary keys are the "relations" in relational data.
+
+\scriptsize
+
+```{r}
+print(station,n=3)
+print(stats,n=3)
+```
+
+## Multiple Keys
+
+* It may take multiple variables to uniquely identify an observation
+in a table.
+* For example, in the `weather` table from `nycflights13`, 
+we need `year-month-day-hour` plus `origin`.
+
+\scriptsize
+
+```{r}
+print(weather,n=3)
+```
+
+## Tables with no Primary Key
+
+* Some tables lack the variables needed to uniquely identify 
+its observations.
+* For example, in the flights table `year-month-day`, `flight` and
+`tailnum` do **not** identify the flight.
+
+\scriptsize
+
+```{r}
+flights %>% 
+  count(year,month,day,flight,tailnum) %>%
+  filter(n > 1) %>% print(n=3)
+```
+
+## Surrogate Key
+
+* You can add a "surrogate key" to a table with no 
+primary key using `mutate()` and  `row_number()`.
+
+* **Exercise** Select year, month, day, flight and tailnum
+from `flights` and add a surrogate key to this 5-column table.
+
+## Joining Tables
+
+* To start, add the data in our
+`stations` table to the weather statistics
+in the `stats` table.
+    * This is what the text calls a mutating joing,
+    because it adds columns to `stats` like a 
+    call to `mutate()` would.
+
+\scriptsize
+
+```{r}
+stats %>% left_join(station)
+```
+
+## A Note on Joins
+
+* The term "join" is from SQL (Structured Query Language),
+which is the standard language used to construct
+RDBMS queries.
+* There are **many** types of joins. In this class
+we will focus on the two that I think are most
+useful in data analysis, the left-join (a mutating join)
+and the semi-join (a filtering join).
+* However, for a bit of context, we will
+discuss inner- and outer-joins.
+
+## Inner Joins
+
+* To illustrate inner- and outer-joins we
+remove one of the rows of `station`.
+
+\scriptsize
+
+```{r}
+station <- station[-3,]
+```
+
+\normalsize
+
+* Now repeat the `left_join()`:
+
+\scriptsize
+
+```{r}
+stats %>% left_join(station)
+```
+
+
+## The Left-Join as an Outer Join
+
+* In the output of `left_join()`, the data from `stats` is
+on the left.
+* The `left_join()` is an "outer join", because
+it keeps observations in one or more of the tables,
+in this case the left table.
+* Similarly, a right-join keeps all observations
+in the right table, and a full-join keeps all 
+observations in both tables.
+
+## The Inner-Join
+
+* The inner-join keeps observations that appear
+in **both** tables.
+
+\scriptsize
+
+```{r}
+stats %>% inner_join(station)
+```
+
+\normalsize
+
+* This might be good if we only wanted data from
+stations in `station`, but there is a tendency 
+to accidentally loose data.
+    * Better to use a filtering join (next topic).
+
+## Defining the Key Columns
+
+* The `station` and `stats` tables are very easy 
+to join because the primary key in `station` has
+the same name as the primary key in `stats`.
+* The `by` argument to `left_join()` lets you 
+specify the keys to match on.
+* The default is `by = NULL`. 
+    * Uses all variables that appear in both tables; 
+    `ID` for `station` and `stats`.
+    * This is called a "natural" join.
+
+## Left-Joins with `nycflights13`
+
+* To illustrate left-joins with the `nycflights13` data
+we use the reduced `flights` table defined in the text.
+
+\scriptsize
+
+```{r}
+flights2 <- flights %>%
+  select(year:day, hour, origin, dest, tailnum, carrier)
+flights2
+```
+
+## Natural Join of `weather`
+
+* `flights2` and `weather` share the variables
+`year`, `month`, `day`, `hour` and `origin`.
+
+\scriptsize
+
+```{r}
+flights2 %>% left_join(weather)
+```
+
+## `by = x`
+
+* Use `by=x` to join on a specific column. 
+* For example, `year` means something different
+in `flights2` and `planes`. Use only `tailnum`.
+
+\scriptsize
+
+```{r}
+flights2 %>% left_join(planes, by="tailnum")
+```
+
+## Matching Keys with Different Names
+
+* The airport codes are in either `origin` or `dest` in 
+the `flights2` table, and in `faa` in the `airports`
+table. 
+* Use, e.g., `by= c("dest" = "faa")`
+
+```{r}
+flights2 %>% left_join(airports,by=c("dest" = "faa"))
+```
+
+## Exercise
+
+* Change the name of the `ID` column in `stats` to `Station`.
+* With these modified tables, do a left-join of the
+`stats` and `station` tables.
+
+## Filtering Joins
+
+* In past lectures we have use `%in%` for filtering
+a table according to a character string.
+    * E.G., `gapminder %>% filter(country %in% c("Canada","United States"))`
+* Filtering joins are an extension 
+to filter a table according to another table.
+
+\scriptsize
+
+```{r}
+top_dest <- flights2 %>% count(dest,sort=TRUE) %>% head(n=10)
+print(top_dest,n=4)
+```
+
+
+##
+
+* The "old" way and the semi-join way:
+
+\scriptsize
+
+```{r}
+flights2%>% filter(dest %in% top_dest$dest) %>% print(n=4)
+flights2 %>% semi_join(top_dest) %>% print(n=4)
+```
+
+
+## Notes
+
+* The `n` column of the `top_dest` table used
+for filtering does not appear in the output. 
+* This ensures the same behaviour as the "old" way.
+* The power of `semi_join()` is in matching 
+to multiple columns, as in the following exercise.
+
+## Exercise
+
+* From the original `flights` table,
+create a table called `top_dep_delay`
+comprised of the year-month-days with the 
+3 largest total delays, defined as the sum of 
+the `dep_delay` variable. 
+    * Hints: use `group_by()` to group
+    `flights` by year-month-day; use `summarize()` to
+    compute total delays (watch out for missing values);
+    use `arrange()` to sort on your total delays variable
+    (you want to sort in descending order)
+* Do a semi-join 
+to filter `flights` to these days.
+
+
+## Set Operations
+
+* An add-on to this chapter is the set operations, 
+`intersect()`, `union()`, and `setdiff()`, 
+which can act on pairs of tables.
+* Illustrate with `intersect()`.
+
+\scriptsize
+
+```{r}
+v1 <- c("apple","pen","pineapple"); v2 <- c("apple","orange","grape")
+intersect(v1,v2)
+df1 <- tibble(x=c(1,2),y=c(1,1)); df2 <- tibble(x=c(1,1),y=c(1,2))
+intersect(df1,df2)
+```
