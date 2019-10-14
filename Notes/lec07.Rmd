@@ -338,8 +338,9 @@ to multiple columns, as in the following exercise.
 * From the original `flights` table,
 create a table called `top_dep_delay`
 comprised of the year-month-days with the 
-3 largest total delays, defined as the sum of 
-the `dep_delay` variable. 
+3 largest total delays, where total delay
+is defined as the sum of the `dep_delay` variable
+for each year-month-day. 
     * Hints: use `group_by()` to group
     `flights` by year-month-day; use `summarize()` to
     compute total delays (watch out for missing values);

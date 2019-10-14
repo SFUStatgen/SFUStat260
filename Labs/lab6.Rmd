@@ -1,0 +1,43 @@
+---
+title: "Lab 6"
+author: "Brad McNeney"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(nycflights13)
+```
+
+In this lab we will work with the `nycflights13` data.
+
+1. Add the latitude and longitude of each 
+airport destination to the `flights` table.
+You will find the data on latitude and longitude
+in the `airports` table.
+
+2. Create a table with the
+year-month-day-flight-tailnum
+combinations that have more than 1 flight (careful about
+missing tailnum). Use this table to filter the flights
+table and then select carrire, flight, origin and dest.
+Which airline used the same flight number for a plane
+that made a trip from La Guardia to St. Louis in 
+the morning and from Newark to Denver in the afternoon.
+
+3. One of the exercises in the lecture 7 notes asked you
+to create a table called `top_dep_delay` from
+the flights table. 
+`top_dep_delay` was
+comprised of the year-month-days with the 
+3 largest total delays, where total delay
+is defined as the sum of the `dep_delay` variable
+for each year-month-day. 
+Recreate `top_dep_delay` for this lab exercise.
+For each of the three top-delay days, 
+report the median, third quartile and maximum
+of the dep_delay variable in `flights`.
