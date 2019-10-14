@@ -365,3 +365,61 @@ intersect(v1,v2)
 df1 <- tibble(x=c(1,2),y=c(1,1)); df2 <- tibble(x=c(1,1),y=c(1,2))
 intersect(df1,df2)
 ```
+
+## Case Study: TB Map
+
+\scriptsize
+
+```{r}
+tb <- read_csv("tb.csv") %>%
+  select(-new_sp, -contains("04"), -contains("514"),
+             -new_sp_mu, -new_sp_fu)  %>%
+  gather(new_sp_m014:new_sp_f65,
+         key=demog,value=count,na.rm=TRUE)%>%
+  mutate(demog = substr(demog,8,12)) %>%
+  separate(demog, into=c("gender","agecat"),sep=1) 
+tb2 <- tb %>% spread(key=gender,value=count) %>%
+  mutate(count = m+f) %>% 
+  select(-m,-f) %>%
+  filter(!is.na(iso2))
+```
+
+##
+
+* Use map data from the `maps` package
+
+\scriptsize
+
+```{r}
+library(maps) # install.packages("maps") first
+ww <- as_tibble(map_data("world")) %>%
+  mutate(iso2 = iso.alpha(region))
+ww
+```
+
+##
+
+* Extract TB data on children in 2000 and join
+to `ww`.
+
+\scriptsize
+
+```{r}
+tbchild00 <- tb2 %>% 
+  filter(agecat == "014",year==2000) %>% 
+  select(iso2,count)
+wwchild00 <- ww %>% left_join(tbchild00)
+```
+
+##
+
+* Can't distinguish countries on the count scale,
+so transform to log-count (plus 1 to avoid log of 0).
+
+\scriptsize
+
+```{r}
+ggplot(wwchild00,aes(x=long,y=lat,fill=log(count+1),
+                     group=group)) + 
+  geom_polygon() + coord_quickmap()
+```
