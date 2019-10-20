@@ -423,3 +423,15 @@ ggplot(wwchild00,aes(x=long,y=lat,fill=log(count+1),
                      group=group)) + 
   geom_polygon() + coord_quickmap()
 ```
+
+## Improvements
+
+* Crude numbers of cases are not very informative.
+Large countries have large counts.
+* Would have been better as rates: 
+   * Need a table of the population of children
+   in each country in 2000 and the 
+   ISO 2 country code.
+   * Join population to the TB data, and calculate
+   rates per 100,000
+   
