@@ -1,0 +1,392 @@
+---
+title: 'Stat 260, Lecture 8, Working with Strings'
+author: "Brad McNeney"
+output: 
+  beamer_presentation:
+    includes:
+      in_header: header_pagenum.tex
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message=FALSE,warning=FALSE,fig.height=4)
+```
+
+
+## Load packages and datasets
+
+\scriptsize
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(stringr)
+```
+
+## Reading
+
+* Strings with `stringr`: Chapter 11 of printed text, 
+Chapter 14 of online text.
+    * The text emphasizes regular expressions more than 
+    we will in class.
+* Working with strings (stringr) cheatsheet at
+https://github.com/rstudio/cheatsheets/raw/master/strings.pdf]
+
+
+
+## Working with ...
+
+* Fixed, or literal strings, like `fish`:
+    - count the number of characters in a string
+    - detect (yes/no) or find (starting position) substrings 
+    - extract and substitute substrings
+    - split and combine strings
+
+* String patterns, like `f[aeiou]sh` (more on patterns,
+or regular expressions in a minute):
+    - detect, find, extract and substitute
+
+* Use tools from the `stringr` package
+
+
+## The ``stringr` package
+
+\small
+
+- Character string manipulation in base R has evolved over time
+as a bit of a patch-work of tools.
+    * The names and functionality of these tools has
+    been taken from string manipulation tools in Unix and
+    scripting languages like Perl.
+    * Steep learning curve for many users.
+- The `stringr` package aims for a cleaner interface
+for tasks that relate to detecting, extracting, replacing
+and splitting on substrings.
+
+## Counting the number of characters
+
+\scriptsize
+
+```{r}
+mystrings <- c("one fish", "two fish", "red fish", "blue fish")
+str_length(mystrings)
+```
+
+## Combining Strings with `str_c()`
+
+\scriptsize
+
+```{r}
+str_c(mystrings[1],mystrings[2])
+str_c(mystrings[1],mystrings[2],sep=", ")
+str_c(mystrings[1],NA,sep=", ")
+str_c(mystrings[1],str_replace_na(NA), sep=", ")
+str_c(mystrings,collapse=", ")
+```
+
+## Subsetting Strings with `str_sub()`
+
+- Specify start and stop.
+- If stop greater than number of characters, stop at the 
+end of the string.
+- If `start` greater than number of characters, return `""`
+
+\scriptsize
+
+```{r}
+str_sub(mystrings,1,3) 
+str_sub(mystrings,-4,-1) # negative means back from end
+str_sub(mystrings,1,10000) 
+str_sub(mystrings,9,10000) 
+```
+
+## Exercise
+
+* For `demog` as defined in the following code chunk,
+    1. extract the substring that represents the gender and age category
+    (`u` stands for unknown) from each of the three components,
+    2. extract the last four characters of each of the three components,
+    3. Combine the three components into one string, separated
+    by a plus-sign.
+
+\scriptsize
+
+```{r}
+demog <- c("new_sp_f014",
+           "new_sp_m1524",
+           "new_sp_mu")
+```
+
+## Fixed Strings vs Regular Expressions
+
+* Fixed strings are interpreted literally, while regular 
+expressions are a language for specifying patterns.
+    * For example, "fish" is fixed and matches only "fish", 
+    while "f[aeiou]sh" matches to "fash", "fesh", ..., "fush".
+* Functions from `stringr` that detect/find/extract/substitute
+strings can do so with ether fixed strings or regular 
+expressions. 
+* We will illustrate these functions with fixed strings first, then
+discuss regular expressions.
+* The text discusses regular expressions first.
+
+
+## Detecting substrings with `str_detect()`
+
+\scriptsize
+
+```{r}
+pattern <- "red"
+str_detect(mystrings,pattern)
+mystrings[str_detect(mystrings,pattern)]
+pattern <- "fish"
+str_detect(mystrings,pattern)
+```
+
+\normalsize
+
+* (We will later see that we can specify a more general 
+pattern than a fixed string.)
+
+## Finding substring starting position
+
+* `str_locate()` returns the start and stop positions of
+the *first* occurance of a string.
+* `str_locate_all()` returns the start and stop of *all* occurances.
+
+\scriptsize
+
+```{r}
+Seuss <- str_c(mystrings,collapse=", ")
+str_locate(Seuss,pattern)
+str_locate_all(Seuss,pattern)
+#str_locate_all(mystrings,pattern)
+```
+
+
+## Replacing (substituting) substrings 
+
+- Use `str_replace` and `str_replace_all`.
+
+\scriptsize
+
+```{r}
+str_replace(Seuss,"fish","bird") # replace first occurance
+str_replace_all(Seuss,"fish","bird") # replace all
+str_replace_all(Seuss,c("one" = "1","two"=2)) # multiple replacements
+```
+
+
+## Splitting Strings
+
+- Some characters in strings, such as `.`, have a special
+meaning (more in a minute). 
+One option is to wrap  such patterns in `fixed()` for a fixed string
+
+\scriptsize
+
+```{r}
+mystrings <- c("20.50", "33.33")
+str_split(mystrings,pattern=".")
+str_split(mystrings,pattern=fixed("."))
+```
+
+
+## Working with string patterns: regular expressions
+
+\small 
+
+- Regular expressions (abbreviated regexps) are recipes
+used to specify search patterns.
+- We use character strings to specify regexps in R. 
+- Regular expressions is a complex topic. We'll only 
+cover the basics.
+    
+
+## A simple pattern with `.`
+
+\small
+
+- To illustrate pattern matching, use a simple pattern
+`p.n`, meaning `p` followed
+by any any character, followed by `n`.
+
+\scriptsize
+
+```{r}
+pattern <- "p.n"
+mystrings <- c("pineapple","apple","pen")
+str_detect(mystrings,pattern)
+```
+
+## Matching Special Characters
+
+* Suppose we want to match a pattern involving `.`
+* We need to precede, or "escape" the special by a `\`.
+* Unfortunately, `\` is a special for character strings,
+so we need to escape it too; that is, we need to type
+the character string `"\\."` to represent the regexp `\.`.
+
+\scriptsize
+
+```{r}
+pattern2 <- "3.40"
+mystrings2 <- c("33.40","3340")
+str_detect(mystrings2,pattern2)
+pattern2 <- "3\\.40"
+str_detect(mystrings2,pattern2)
+```
+
+
+## Splitting, Locating and Extracting with Patterns
+
+\scriptsize
+
+```{r}
+pattern
+str_split(mystrings,pattern)
+str_locate(mystrings,pattern)
+```
+
+## 
+
+\scriptsize
+
+```{r}
+str_extract(mystrings,pattern)
+str_match(mystrings,pattern)
+```
+
+## Replacing patterns
+
+\small
+
+- `str_replace` and `str_replace_all`
+accept regular expressions; e.g., 
+```{r}
+str_replace(mystrings,pattern,"PPAP")
+```
+
+- The replacement string is literal; e.g.,
+```{r}
+str_replace(mystrings,pattern,"p.n")
+```
+
+## Exercise
+
+* Replace the decimals with commas in the following 
+strings.
+
+```{r}
+exstring <- c("$55.30","$22.43")
+str_replace(exstring,"\\.",",")
+```
+
+
+
+## Adding `*` and `+` quantifiers to `.`
+
+\small
+
+- The combinations `.*` and `.+` match 
+multiple characters.
+    - E.G., `f.*n` matches `f` followed by 0 or 
+    more characters, followed by `n`.
+    - `f.+n` matches `f` followed by **1** or more 
+    characters, followed by `n`.
+```{r}
+mystrings <- c("fun","for fun","fn")
+pattern1 <- "f.*n"; pattern2 <- "f.+n"
+str_extract(mystrings,pattern1)
+str_extract(mystrings,pattern2)
+```
+
+## "Greedy" matching with `*`
+
+* The `*` quantifier matches the longest possible string.
+
+```{r}
+mystrings <- c("fun","fun, fun, fun","fn")
+pattern1 <- "f.*n"
+str_extract(mystrings,pattern1)
+```
+
+## Numerical quantifiers
+
+* Use `{n}` to require exactly `n` matches,
+`{n,}` to require n or more, `{,m}` at most m,
+and `{n,m}` between n and m
+
+```{r}
+str_extract(mystrings,"f.{6}n")
+str_extract(mystrings,"f.{1,13}n")
+```
+
+## Anchors
+
+* Regular expressions match any part of a string. 
+* Use the "anchor" `^` to restrict a match to the start and 
+the anchor `$` to restrict a match to the end of a string.
+* 
+
+\scriptsize
+
+```{r}
+str_extract(mystrings,"^p")
+str_extract(mystrings,"e$")
+```
+
+## Exercise
+
+* Create a regular expression that matches words that 
+are exactly three letters long.
+
+## Other characters to match
+
+* We have illustrated matching on the pattern `.`, which is
+any character.
+* Instead we can specify a class of characters to match.
+
+
+\small
+
+```{r}
+pattern4 <- "f[aeiou]*n" 
+mystrings <- c("fan","fin","fun","fan, fin, fun",
+               "friend","faint")
+str_extract(mystrings,pattern4) 
+```
+
+##
+
+\small
+
+```{r}
+str_extract_all(mystrings,pattern4)
+```
+
+## Shorthands for Common Character Classes
+
+* `\d` matches any digit (create with "\\d")
+* `\s` matches any whitespace (create with "\\s")
+* Use a dash to specify a range of characters; e.g.,
+    * `[A-Z]` matches capital letters
+    * `[a-z]` matches lower-case letters
+    * `[1-9]` matches any digit (and so is the same as `\d`)
+* Use the caret to negate: `[^abc]` matches anything
+except a, b or c.
+
+## Exercise
+
+* Create a regular expression that matches words
+that end in `ed` but not `eed`.
+
+## Converting Case
+
+* Use `str_to_upper()` to change lower- to upper-case and 
+`str_to_lower()` to change upper- to lower-case.
+
+
+```{r}
+str_to_upper(Seuss)
+```
+
