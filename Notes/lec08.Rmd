@@ -380,6 +380,16 @@ except a, b or c.
 * Create a regular expression that matches words
 that end in `ed` but not `eed`.
 
+## Alternatives
+
+* The `|` in a regular expression is like the logical OR.
+
+\scriptsize
+
+```{r}
+str_replace_all(Seuss,"red|blue","color")
+str_replace_all("Is it grey or gray?","gr(e|a)y","white")
+```
 ## Converting Case
 
 * Use `str_to_upper()` to change lower- to upper-case and 
