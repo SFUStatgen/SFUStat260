@@ -224,7 +224,7 @@ str_detect(mystrings,pattern)
 * We need to precede, or "escape" the special by a `\`.
 * Unfortunately, `\` is a special for character strings,
 so we need to escape it too; that is, we need to type
-the character string `"\\."` to represent the regexp `\.`.
+the character string `"\\."` to represent the regexp `\.`
 
 \scriptsize
 
@@ -278,7 +278,6 @@ strings.
 
 ```{r}
 exstring <- c("$55.30","$22.43")
-str_replace(exstring,"\\.",",")
 ```
 
 
@@ -366,8 +365,8 @@ str_extract_all(mystrings,pattern4)
 
 ## Shorthands for Common Character Classes
 
-* `\d` matches any digit (create with "\\d")
-* `\s` matches any whitespace (create with "\\s")
+* `\d` matches any digit (create with `"\\d"`)
+* `\s` matches any whitespace (create with `"\\s"`)
 * Use a dash to specify a range of characters; e.g.,
     * `[A-Z]` matches capital letters
     * `[a-z]` matches lower-case letters
