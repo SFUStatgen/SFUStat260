@@ -28,7 +28,7 @@ for each "country" in `youthUI`. Represent each time series
 by a line. Use an appropriate alpha level to manage overplotting.
 
 4. Using a **regular expression**, extract the subset 
-of "Countries" whose `Country.Name` contains the string
+of "Countries" whose `Country Name` contains the string
 "(IDA & IBRD countries)" or "(IDA & IBRD)", and save in a data frame
 `youthDevel`. (No cheating by using `fixed()`. 
 Hint: `(` is a special character string,
