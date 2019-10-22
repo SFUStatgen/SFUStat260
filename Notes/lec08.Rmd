@@ -172,7 +172,7 @@ str_locate_all(Seuss,pattern)
 ```{r}
 str_replace(Seuss,"fish","bird") # replace first occurance
 str_replace_all(Seuss,"fish","bird") # replace all
-str_replace_all(Seuss,c("one" = "1","two"=2)) # multiple replacements
+str_replace_all(Seuss,c("one" = "1","two"="2")) # multiple replacements
 ```
 
 
