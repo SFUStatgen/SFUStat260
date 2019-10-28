@@ -1,0 +1,35 @@
+---
+title: "Lab 8"
+author: "Brad McNeney"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(forcats)
+library(lubridate)
+yvr <- read_csv("weatherYVR.csv")
+yvr
+```
+
+In the above code chunk you read in **daily** weather
+data from YVR in 2003.
+
+1. Coerce the `Date/Time` variable to a date object
+and rename it Date.
+
+2. Do a time series plot (with lines) 
+of the daily maximum temperature by day.
+
+3. Change the `Month` variable from 
+numeric to a factor.
+(Hint: The `month()` function with the `label=TRUE` will
+extract the months from a date-time object.)
+
+4. Plot the average maximum temperature *versus* month,.
+Redo this plot with months ordered by 
+average maximum.
