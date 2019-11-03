@@ -435,8 +435,6 @@ which "encloses" the environment within `f`.
 `f`'s environment, it will look for it in the enclosing 
 environment, and then the enclosing environment of `.GlobalEnv`,
 and so on.
-- If `g` is called within `f`, then the enclosing environment
-of `g` is the environment of `f`.
 - The `search()` function lists the heirarchy of 
 environments that enclose `.GlobalEnv`. 
 
@@ -456,17 +454,16 @@ a pointer to its enclosing environment.
 *  The following code chunk is typed into the R Console.
     - What is the output of the function call `f(5)`?
     - What is the enclosing environment of `f()`?
-    - What is the enclosing environment of this
-    call to `g()`?
+    - What is the enclosing environment of `g()`?
     - What search order does R use to find the 
-    value of `x` when it is needed in this call to `g()`?
+    value of `x` when it is needed in `g()`?
 ```{r}
 x <- 1
 f <- function(y) {
+  g <- function(z) {
+    (x+z)^2
+  }
   g(y)
-}
-g <- function(z) {
-  (x+z)^2
 }
 ```
 
