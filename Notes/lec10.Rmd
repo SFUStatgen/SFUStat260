@@ -33,7 +33,7 @@ Chapters 17 to 19 of online text.
 * We have already been programming in R, mostly by writing
 chunks of code that use tidyverse functions to do
 data visualization or wrangling.
-* Now we discuss making our 
+* Now we discuss strategies for making our 
 code easier to read and less prone to errors.
 * One useful tool for this purpose is the forward pipe,
 `%>%`, which we'll discuss in more detail.
@@ -43,7 +43,7 @@ and writing functions can help us stay DRY.
 ## Pipes
 
 * The forward pipe `%>%` is implemented in the 
-`magrittr` package, which is loaded when we load the tidyverse.
+`magrittr` package, and is loaded when we load the tidyverse.
 * Forward pipes are useful for combining a linear
 sequence of data processing steps, 
 when we won't need the intermediate steps.
@@ -343,9 +343,10 @@ print(i)
 * **Exercise** Write a function `standardize_tibble()`
 that loops through the columns of a `tibble` and 
 standardizes each with your `standardize()` function.
-Hint: If `tt` is a tibble, `ncol(tt)` is 
+Hints: If `tt` is a tibble, `ncol(tt)` is 
 the number of columns, and `seq_along(ncol(tt))` is 
-an appropriate index set.
+an appropriate index set. If `tt` is a tibble,
+`tt[[1]]` is the first column.
 
 
 ## `for` loop index set
@@ -447,7 +448,8 @@ a pointer to its enclosing environment.
 
 ## Exercise 
 
-* In which environment do the following functions find the object `y`?
+* The following two functions are defined in a user's
+global environment. Where do they find the object `y`?
 
 \scriptsize
 
@@ -499,7 +501,8 @@ then `standardize()`. In `standardize()`, replace
 `sd()` by a function `spread()`, where `center()` 
 and `spread()` are functions that you write 
 to compute the mean and SD using only the `sum()` function.
-
+`center()` and `spread()` should remove missing values
+by default.
 
 ## R packages
 
