@@ -232,7 +232,7 @@ f <- function(x=0) { x^2}
 \normalsize
 
 * **Exercise** Re-write our `standardize()` function
-to take an argument `na.rm`. Set this argument 
+to have an additional argument `na.rm`, set 
 to `TRUE` by default.
 
 ## Argument defaults
@@ -325,13 +325,13 @@ if(NA) {} # Throws the following error:
 
 ## `for` loops
 
-* Example: In the following, `seq_along(nreps)` is the "index set".
+* Example: In the following, `1:nreps` is the "index set".
 
 \scriptsize
 
 ```{r}
 n <- 10; nreps <- 100; x <- vector(mode="numeric",length=nreps)
-for(i in seq_along(nreps)) {
+for(i in 1:nreps) {
   x[i] <- mean(rnorm(n))
 }
 summary(x)
@@ -344,20 +344,23 @@ print(i)
 that loops through the columns of a `tibble` and 
 standardizes each with your `standardize()` function.
 Hints: If `tt` is a tibble, `ncol(tt)` is 
-the number of columns, and `seq_along(ncol(tt))` is 
+the number of columns, and `1:ncol(tt)` is 
 an appropriate index set. If `tt` is a tibble,
 `tt[[1]]` is the first column.
 
 
 ## `for` loop index set
 
-- Index sets of the form `seq_along(n)` are most common, but 
-can be almost any vector.
+- Index sets are sometimes the indeces of a vector, 
+and can also be the elements of the vector.
 
 \scriptsize
 
 ```{r}
 ind <- c("cat","dog","mouse")
+for(i in seq_along(ind)) {
+  print(paste("There is a",ind[i],"in my house"))
+}
 for(i in ind) {
   print(paste("There is a",i,"in my house"))
 }
@@ -395,7 +398,7 @@ counter
 \scriptsize
 
 ```{r}
-for(i in seq_along(100)) {
+for(i in 1:100) {
   if(i>3) break
   print(i)
 }
@@ -431,7 +434,9 @@ which "encloses" the environment within `f`.
 - If `f` needs a variable and can't find it whithin
 `f`'s environment, it will look for it in the enclosing 
 environment, and then the enclosing environment of `.GlobalEnv`,
-and so on. 
+and so on.
+- If `g` is called within `f`, then the enclosing environment
+of `g` is the environment of `f`.
 - The `search()` function lists the heirarchy of 
 environments that enclose `.GlobalEnv`. 
 
@@ -448,19 +453,20 @@ a pointer to its enclosing environment.
 
 ## Exercise 
 
-* The following two functions are defined in a user's
-global environment. Where do they find the object `y`?
-
-\scriptsize
-
+*  The following code chunk is typed into the R Console.
+    - What is the output of the function call `f(5)`?
+    - What is the enclosing environment of `f()`?
+    - What is the enclosing environment of this
+    call to `g()`?
+    - What search order does R use to find the 
+    value of `x` when it is needed in this call to `g()`?
 ```{r}
-y <- 10
-f1 <- function(x) {
-  y <- 15
-  x*y
+x <- 1
+f <- function(y) {
+  g(y)
 }
-f2 <- function(x) {
-  x*y
+g <- function(z) {
+  (x+z)^2
 }
 ```
 
