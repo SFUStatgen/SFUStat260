@@ -1,0 +1,52 @@
+---
+title: "Lab 9"
+author: "Brad McNeney"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+The folder `Lab9Data` contains several CSV files.
+Each file contains an ID variable and a variable `res`  that 
+holds results of an experiment on the study subjects.
+You can obtain a vector with the file path and names with
+
+```{r}
+dfiles <- dir("Lab9Data",full.names=TRUE)
+dfiles
+```
+
+1. Read the first datafile into a tibble named
+`ex_data`. Change the name of the `res` column 
+to `experiment1`, by manipulating the `names` attribute
+of `ex_data`. That is, use `names(ex_data)[2] <- "experiment1"`.
+
+
+2. Write a function `read_ex()` that takes `dfiles`
+and an experiment number `i` as arguments and returns
+a tibble with the name of the `res` column
+changed to the expermiment number. That is,
+`read_ex(dfiles,1)` should
+return the same tibble as in question 1.
+
+
+
+3. Use your function from question 2 to 
+read in the second data file. Join this second file to 
+`ex_data` by `ID.
+
+4. Write a function called `read_ex_data()` that
+takes a folder name as its argument and 
+    1. reads in the data filenames from that folder,
+    2. calls `read_ex()` to read the first datafile into 
+    `ex_data`,
+    3. loops through the remaining data files, successively
+    joining them to `ex_data`, and
+    4. returns `ex_data`.
+
