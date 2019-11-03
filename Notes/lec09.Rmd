@@ -448,8 +448,7 @@ yvrdt %>%
 * Verify that the `datetime` object created on about slide 
 30 is equal to the `Date/Time` object
 created earlier with `ymd_hm()`.
-* Use the `sd()` function to c
-alculate the SD of the `datetime` object.
+* Use the `sd()` function to calculate the SD of the `datetime` object.
 What are the units?
 
 
