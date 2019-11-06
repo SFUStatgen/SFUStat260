@@ -63,7 +63,7 @@ make the code difficult to debug.
 ```{r,eval=FALSE}
 read_csv("API_ILO_country_YU.csv") %>%
   gather(year,`Unemployment Rate`,`2010`:`2014`,convert=TRUE) %>%
-  filter(str_detect(`Country Name`," \\(IDA.*\\)")) %>%
+  filter(str_detect(`Country Name`," \\(IDA.*\\) %>%
   mutate(`Country Name` = 
            str_replace(`Country Name`,"", "\\(IDA.*\\)")) %>%
   select(-`Country Code`) %>%
@@ -331,7 +331,7 @@ if(NA) {} # Throws the following error:
 
 ```{r}
 n <- 10; nreps <- 100; x <- vector(mode="numeric",length=nreps)
-for(i in 1:nreps) {
+for(i in 1:nreps) { # or i in seq(nreps)
   x[i] <- mean(rnorm(n))
 }
 summary(x)
