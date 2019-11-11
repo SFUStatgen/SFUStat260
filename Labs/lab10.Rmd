@@ -37,20 +37,6 @@ into a list, assigns class "study_data" to the list,
 and returns the list. Your function should use `length(dfile)`
 to determine the number of files.
 
-```{r}
-read.study_data <- function(dfiles) {
-  ff <- vector(mode="list",length=length(dfiles))
-  for(i in seq_along(ff)) {
-    f <- read_csv(dfiles[i])
-    names(f) <- c("x","y")
-    ff[[i]] <- f
-  }
-  class(ff) <- "study_data"
-  ff
-}
-ss <- read.study_data(dfiles)
-```
-
 4. Write a function `plot.study_data()` that 
 takes an object of class "study_data" as input.
 The first 5 lines of your function should be the
@@ -67,20 +53,4 @@ Have your function coerce `study` to a factor, and then call
 `ggplot()` to make a plot of `y` *versus* `x`,
 with different colours for the different studies.
 Add points and smoothers to your plot.
-
-
-```{r}
-plot.study_data <- function(ff) {
-  dat <- NULL
-  for(i in seq_along(ff)) {
-    d <- ff[[i]]
-    dat <- rbind(dat,tibble(study=i,x=d$x,y=d$y))
-  }
-  dat <- mutate(dat,study=factor(study))
-  ggplot(dat,aes(x=x,y=y,color=study)) + geom_point() + geom_smooth()
-}
-  
-ss <- read.study_data(dfiles)
-plot(ss)
-```
 
