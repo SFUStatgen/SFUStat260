@@ -71,7 +71,7 @@ a `for()` loop like the following.
 
 ```{r}
 for(i in seq_along(rr)) { # safer than 1:length(rr) 
-  coef(rr[[i]])
+  print(coef(rr[[i]]))
 }
 ```
 
@@ -185,7 +185,7 @@ lapply(rr,bfun,"x1")
 
 ## Exercise
 
-* Re-write your summary method for objects of 
+* Re-write your `coef()` method for objects of 
 class `lm_vec` to use `lapply()`.
 
 ## Iterating with the `map()` functions from `purrr`
