@@ -1,0 +1,60 @@
+---
+title: "Lab 11"
+author: "Brad McNeney"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+In this lab we re-do some of lab 10
+using the `map()` functions from `purrr`.
+Recall that the folder `Lab10Data contains several CSV data files.
+
+```{r}
+dfiles <- dir("Lab10Data",full.names=TRUE)
+dfiles
+```
+
+1. Write a function `read_rename_csv()` 
+that (i) reads in a CSV file with `read_csv()`
+and (ii) changes the names of the columns
+of the resulting tibble to `c("x","y")`.
+(Compare to question 2 of lab 10.)
+
+
+2. Use `map()` and `read_rename_csv()`
+to read and rename all 9 
+files from the Lab10Data folder.
+
+
+3. Re-do your call to `map()` from part 2.
+This time, define the function that reads 
+and renames the data files on the fly, 
+using  `~` and `.`. 
+Do you prefer the approach of question 2 or
+of question 3 (this question)?
+
+Hint: Use 
+`~{ ... }` to define your function, where
+`...` denotes the body of the function you will
+define. Remember that `x;y` is equivalent 
+to having `x` and `y` on two lines of R code.
+
+4. We will now apply the forward pipe several times
+to get an equivalent to the `plot.study_data()` function 
+you wrote in lab 10. The steps to take are
+    i. Pipe `dfiles` through a call to  `map()` that 
+    reads and renames the files (use your code from either
+    question 2 or 3, whichever you preferred),
+    ii. pipe the result through `bind_rows(.id="study")`
+    (read the documentation for `bind_rows()`),
+    iii. pipe the result through `mutate()` to 
+    change `study` to a factor, and 
+    iv. pipe the result into `ggplot()` to make the plot.
+    
