@@ -142,6 +142,24 @@ out <- unlist(out)
 })
 ```
 
+##  `bind_cols()` and `bind_rows()`
+
+\scriptsize
+
+```{r}
+out <- vector("list", length(means))
+n <- 100
+for (i in seq_along(means)) {
+  out[[i]] <- rnorm(n, means[[i]])
+}
+out <- bind_cols(out) 
+out <- vector("list", length(means))
+for (i in seq_along(means)) {
+  out[[i]] <- tibble(y=rnorm(n, means[[i]]),x=rnorm(n))
+}
+out <- bind_rows(out) 
+```
+
 
 ## The body of a loop can be a small part of the code
 
@@ -244,7 +262,7 @@ definitions.
 ```{r}
 rr %>%
   map(summary) %>%
-  map_dbl(~.$r.squared)
+  map_dbl(~.$r.squared) # or map_dbl("r.squared")
 ```
 
 \normalsize
@@ -257,7 +275,8 @@ the function"
 * Write a call to `map_dbl()` that
 does the same thing as `map_dbl(rr,b1fun)`,
 but define the function on the fly, as in 
-the previous slide.
+the previous slide. You can use multiple 
+calls to `map()` functions.
 
 ## Detour: The apply family of functions in R
 
@@ -285,10 +304,8 @@ to a vector or matrix.
 
 \scriptsize
 
-```{r,eval=FALSE}
-FIX -- this does not work
-fsum <- function(x) { sum(x$FTEs) }
-sapply(sp.stat,fsum)[1:2]
+```{r}
+sapply(rr,coef)
 ````
 
 ## Detour, cont.
