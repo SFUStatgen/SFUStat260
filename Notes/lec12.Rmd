@@ -254,10 +254,10 @@ the function"
 
 ## Exercise
 
-* Re-write the code `map_dbl(rr,b1fun)`
-with the forward pipe, as in the previous 
-slide, and define the function `b1fun` on the fly.
-Use the `~` and `.` to define your function.
+* Write a call to `map_dbl()` that
+does the same thing as `map_dbl(rr,b1fun)`,
+but define the function on the fly, as in 
+the previous slide.
 
 ## Detour: The apply family of functions in R
 
